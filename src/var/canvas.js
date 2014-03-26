@@ -1,3 +1,7 @@
+/**
+ * @module canvas
+ * @requires constants
+ */
 define(function(require) {
 
   var constants = require('./constants');

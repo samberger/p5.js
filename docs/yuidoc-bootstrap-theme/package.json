@@ -1,0 +1,21 @@
+{
+  "name": "p5-docs-theme",
+  "version": "0.0.1",
+  "description": "A revamped yuidoc theme with bootstrap",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kevinlacotaco/yuidoc-bootstrap-theme.git"
+  },
+  "keywords": [
+    "yuidoc",
+    "bootstrap"
+  ],
+  "author": "Kevin Lakotko",
+  "bugs": {
+    "url": "https://github.com/kevinlacotaco/yuidoc-bootstrap-theme/issues"
+  }
+}

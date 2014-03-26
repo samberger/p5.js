@@ -1,3 +1,6 @@
+/**
+ * @module shim
+ */
 define(function(require) {
 
   // requestAnim shim layer by Paul Irish

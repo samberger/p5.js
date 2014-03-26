@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/p5.js - p5</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap-responsive.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-static-top"> <!-- navbar-fixed-top -->
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+	    <img alt="p5" src="../assets/css/logo.png" style="max-height: 65%;" title="p5">
+        
+            p5
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for <strong>p5 v.0.2.0</strong>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/p5", "classes/PImage", "classes/PVector", "modules/canvas", "modules/constants", "modules/core", "modules/image", "modules/mouse", "modules/p5", "modules/pvector", "modules/shim", "modules/touch"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+    <h3>&nbsp;</h3>
+    <div id="sidebar">
+        <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+            <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+            <!--<li><a href="#modules" data-toggle="tab">Modules</a></li>
+            <li><a href="#methods" data-toggle="tab">Methods</a></li>
+            <li><a href="#properties" data-toggle="tab">Properties</a></li>-->
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" placeholder="Type to filter APIs">
+        </div>
+
+        <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+            <div class="tab-pane active" id="classes">
+                <ul id="api-classes" class="nav nav-list">
+                    
+                        <li><a href="../classes/p5.html">p5</a></li>
+                    
+                        <li><a href="../classes/PImage.html">PImage</a></li>
+                    
+                        <li><a href="../classes/PVector.html">PVector</a></li>
+                    
+                </ul>
+            </div>
+
+            <!--<div class="tab-pane" id="modules">
+                <ul id="api-modules" class="nav nav-list">
+                    
+                        <li><a href="../modules/canvas.html">canvas</a></li>
+                    
+                        <li><a href="../modules/constants.html">constants</a></li>
+                    
+                        <li><a href="../modules/core.html">core</a></li>
+                    
+                        <li><a href="../modules/image.html">image</a></li>
+                    
+                        <li><a href="../modules/mouse.html">mouse</a></li>
+                    
+                        <li><a href="../modules/p5.html">p5</a></li>
+                    
+                        <li><a href="../modules/pvector.html">pvector</a></li>
+                    
+                        <li><a href="../modules/shim.html">shim</a></li>
+                    
+                        <li><a href="../modules/touch.html">touch</a></li>
+                    
+                </ul>
+            </div>
+
+            
+
+            -->
+
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+            <!--     <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+ -->
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+    <h1>src/p5.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * @module p5
+ */
+define(function (require) {
+
+  &#x27;use strict&#x27;;
+  
+  var p5 = require(&#x27;core&#x27;);
+  
+  var PVector = require(&#x27;math.pvector&#x27;);
+
+  require(&#x27;color.creating_reading&#x27;);
+  require(&#x27;color.setting&#x27;);
+  require(&#x27;data.array_functions&#x27;);
+  require(&#x27;data.string_functions&#x27;);
+  require(&#x27;dom.manipulate&#x27;);
+  require(&#x27;dom.pelement&#x27;);
+  require(&#x27;environment&#x27;);
+  require(&#x27;image&#x27;);
+  require(&#x27;image.loading_displaying&#x27;);
+  require(&#x27;input.files&#x27;);
+  require(&#x27;input.keyboard&#x27;);
+  require(&#x27;input.mouse&#x27;);
+  require(&#x27;input.time_date&#x27;);
+  require(&#x27;input.touch&#x27;);
+  require(&#x27;math.calculation&#x27;);
+  require(&#x27;math.random&#x27;);
+  require(&#x27;math.noise&#x27;);
+  require(&#x27;math.trigonometry&#x27;);
+  require(&#x27;output.files&#x27;);
+  require(&#x27;output.image&#x27;);
+  require(&#x27;output.text_area&#x27;);
+  require(&#x27;shape.2d_primitives&#x27;);
+  require(&#x27;shape.attributes&#x27;);
+  require(&#x27;shape.curves&#x27;);
+  require(&#x27;shape.vertex&#x27;);
+  require(&#x27;structure&#x27;);
+  require(&#x27;transform&#x27;);
+  require(&#x27;typography.attributes&#x27;);
+  require(&#x27;typography.loading_displaying&#x27;);
+
+  if (document.readyState === &#x27;complete&#x27;) {
+    p5._init();
+  } else {
+    window.addEventListener(&#x27;load&#x27;, p5._init , false);
+  }
+
+  window.p5 = p5;
+  window.PVector = PVector;
+
+  return p5;
+
+});
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.11.0.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/p5-docs.js"></script>
+</body>
+</html>

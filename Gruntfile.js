@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -21,7 +21,29 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['src/**/*.js'],
-      tasks: ['jshint', 'requirejs']
+      tasks: ['jshint', 'requirejs', 'jsdoc']
+    },
+//    jsdoc: {
+//      dist: {
+//        src: ['src/**/*.js'],
+//        options: {
+//          destination: 'docs/api'
+//        }
+//      }
+//    },
+    yuidoc: {
+      compile: {
+        name: '<%= pkg.name %>',
+        description: '<%= pkg.description %>',
+        version: '<%= pkg.version %>',
+        url: '<%= pkg.homepage %>',
+        options: {
+          paths: 'src/',
+          themedir: 'docs/yuidoc-bootstrap-theme/',
+          helpers: ["docs/yuidoc-bootstrap-theme/helpers/helpers.js"],
+          outdir: 'docs/api/'
+        }
+      }
     },
     mocha: {
       test: {
@@ -114,6 +136,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-mocha');
+//  grunt.loadNpmTasks('grunt-jsdoc');
+  grunt.loadNpmTasks('grunt-contrib-yuidoc');
+  
   grunt.registerTask('test', ['jshint', 'qunit']);
 
   //grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);

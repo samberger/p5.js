@@ -1,41 +1,124 @@
+/**
+@module core
+@requires shim
+@requires constants
+*/
 define(function (require) {
 
   'use strict';
 
+  // Require the shim module to add cross-browser features.
   require('shim');
 
-  // Core needs the PVariables object
+  // Require the constants module and add the p5 constants to the global context. 
+  // The Core module needs the PVariables object.
   var constants = require('constants');
 
-  // Create the p5 constructor
+  /**
+   * The p5 constructor function. If the user has created a global setup function, assume "beginner mode" and make everything global.
+   * @class p5
+   * @constructor
+   * @param {Object} [node] The canvas element. A canvas will be added to the DOM if not provided.
+   * @param {Object} [sketch] The sketch object.
+   */
   var p5 = function(node, sketch) {
 
     var self = this;
 
-    // Keep a reference to when this instance was created
+    /**
+     * Keep a reference to when this instance was created (timestamp).
+     * @property startTime
+     * @type String
+     */
     this.startTime = new Date().getTime();
+    
+    /**
+     * Asynchronous files preload counter.
+     * @property preload_count
+     * @type Number
+     */
     this.preload_count = 0;
 
+    /**
+     * Whether the instance of p5 is global or not.
+     * @property isGlobal
+     * @type Boolean
+     */
     this.isGlobal = false;
 
     // Environment
+    /**
+     * Contains the number of frames that have been displayed since the program started. Inside setup() the value is 0, after the first iteration of draw it is 1, etc.
+     * @property frameCount
+     * @type Number
+     */
     this.frameCount = 0;
+    
+    /**
+     * Contains the approximate frame rate of a running sketch. The initial value is 10 fps and is updated with each frame. The value is averaged over several frames, and so will only be accurate after the draw function has run 5-10 times. 
+     * @property _frameRate
+     * @type Number
+     */
     this._frameRate = 0;
+    
     this._lastFrameTime = 0;
+    
     this._targetFrameRate = 60;
+    
+    /**
+     * Confirms if the current canvas is "focused," meaning that it is active and will accept mouse or keyboard input. This variable is "true" if it is focused and "false" if not. 
+     * @property focused
+     * @type Boolean
+     */
     this.focused = true;
+    
+    /**
+     * Variable that stores the width of the entire screen display. This is used to run a full-screen program on any display size. 
+     * @property displayWidth
+     * @type Number
+     */
     this.displayWidth = screen.width;
+    
+    /**
+     * Variable that stores the height of the entire screen display. This is used to run a full-screen program on any display size. 
+     * @property displayHeight
+     * @type Number
+     */
     this.displayHeight = screen.height;
 
     // Shape.Vertex
     this.shapeKind = null;
+    
     this.shapeInited = false;
 
     // Input.Mouse
+    /**
+     * The variable mouseX always contains the current horizontal coordinate of the mouse.
+     * @property mouseX
+     * @type Number
+     */
     this.mouseX = 0;
+    
+    /**
+     * The variable mouseY always contains the current vertical coordinate of the mouse.
+     * @property mouseY
+     * @type Number
+     */
     this.mouseY = 0;
+    
+    /**
+     * The variable pmouseY always contains the horizontal position of the mouse in the frame previous to the current frame.
+     * @property pmouseX
+     * @type Number
+     */
     this.pmouseX = 0;
+    
+    /**
+     * The variable pmouseY always contains the vertical position of the mouse in the frame previous to the current frame.
+     * @type Number
+     */
     this.pmouseY = 0;
+    
     this.mouseButton = 0;
 
     // Input.Keyboard
@@ -45,6 +128,7 @@ define(function (require) {
 
     // Input.Touch
     this.touchX = 0;
+    
     this.touchY = 0;
 
     // Output.Files
@@ -109,11 +193,9 @@ define(function (require) {
 
   };
 
+  // If the user has created a global setup function, assume "beginner mode" and make everything global.
   // Create is called at window.onload
   p5._init = function() {
-    // If the user has created a global setup function,
-    // assume "beginner mode" and make everything global
-    // Create a processing instance
     new p5();
   };
 

@@ -1,9 +1,18 @@
+/**
+@module touch
+@requires core
+*/
 define(function (require) {
 
   'use strict';
 
   var p5 = require('core');
 
+  /**
+   * Sets touch points.
+   * @event setTouchPoints
+   * @param {Object} e The event object.
+   */
   p5.prototype.setTouchPoints = function(e) {
     this._setProperty('touchX', e.changedTouches[0].pageX);
     this._setProperty('touchY', e.changedTouches[0].pageY);
@@ -14,7 +23,12 @@ define(function (require) {
     }
     this._setProperty('touches', touches);
   };
-
+  
+  /**
+   * Listener for the touch start event.
+   * @event ontouchstart
+   * @param {Object} e The event object.
+   */
   p5.prototype.ontouchstart = function(e) {
     this.setTouchPoints(e);
     if(typeof this.touchStarted === 'function') {
@@ -25,12 +39,24 @@ define(function (require) {
       e.preventDefault();
     }
   };
+  
+  /**
+   * Listener for the touch move event.
+   * @event ontouchmove
+   * @param {Object} e The event object.
+   */
   p5.prototype.ontouchmove = function(e) {
     this.setTouchPoints(e);
     if(typeof this.touchMoved === 'function') {
       this.touchMoved(e);
     }
   };
+  
+  /**
+   * Listener for the touch end event.
+   * @event ontouchend
+   * @param {Object} e The event object.
+   */
   p5.prototype.ontouchend = function(e) {
     this.setTouchPoints(e);
     if(typeof this.touchEnded === 'function') {

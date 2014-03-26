@@ -1,13 +1,49 @@
+/**
+ * @module pvector
+ */
 define(function (require) {
 
   'use strict';
-
+  
+  /**
+   * A class to describe a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector. A vector is an entity that has both magnitude and direction. The datatype, however, stores the components of the vector (x,y for 2D, and x,y,z for 3D). The magnitude and direction can be accessed via the methods mag() and heading().
+ * 
+ * In many of the Processing examples, you will see PVector used to describe a position, velocity, or acceleration. For example, if you consider a rectangle moving across the screen, at any given instant it has a position (a vector that points from the origin to its location), a velocity (the rate at which the object's position changes per time unit, expressed as a vector), and acceleration (the rate at which the object's velocity changes per time unit, expressed as a vector). Since vectors represent groupings of values, we cannot simply use traditional addition/multiplication/etc. Instead, we'll need to do some "vector" math, which is made easy by the methods inside the PVector class. 
+   * @class PVector
+   * @constructor
+   * @param {Number} [x] The x component of the vector
+   * @param {Number} [y] The y component of the vector
+   * @param {Number} [z] The z component of the vector
+   */
   function PVector(x, y, z) {
+    /**
+     * The x component of the vector
+     * @property x
+     * @type {Number}
+     */
     this.x = x || 0;
+    /**
+     * The y component of the vector
+     * @property y
+     * @type {Number}
+     */
     this.y = y || 0;
+    /**
+     * The z component of the vector
+     * @property z
+     * @type {Number}
+     */
     this.z = z || 0;
   }
 
+  /**
+   * Sets the x, y, and z component of the vector using three separate variables, the data from a PVector, or the values from a float array.
+   * @method set
+   * @param {Number} [x] The x component of the vector
+   * @param {Number} [y] The y component of the vector
+   * @param {Number} [z] The z component of the vector
+   * @return {Void} Nothing.
+   */
   PVector.prototype.set = function (x, y, z) {
     if (x instanceof PVector) { return this.set(x.x, x.y, x.z); }
     if (x instanceof Array) { return this.set(x[0], x[1], x[2]); }
@@ -16,10 +52,25 @@ define(function (require) {
     this.z = z || 0;
   };
 
+  /**
+   * Gets a copy of the vector, returns a PVector object. 
+   * @method get
+   * @return {PVector} The PVector object.
+   */
   PVector.prototype.get = function () {
     return new PVector(this.x, this.y, this.z);
   };
 
+  /**
+   * Adds x, y, and z components to a vector, adds one vector to another, or adds two independent vectors together. The version of the method that adds two vectors together is a static method and returns a PVector, the others have no return value -- they act directly on the vector. See the examples for more context. 
+   * 
+   * @method add
+   * @chainable
+   * @param {Number} x The x component of the vector to be added.
+   * @param {Number} y The y component of the vector to be added.
+   * @param {Number} z The z component of the vector to be added.
+   * @return {PVector} The PVector object.
+   */
   PVector.prototype.add = function (x, y, z) {
     if (x instanceof PVector) { return this.add(x.x, x.y, x.z); }
     if (x instanceof Array) { return this.add(x[0], x[1], x[2]); }
@@ -29,6 +80,16 @@ define(function (require) {
     return this;
   };
 
+  /**
+   * Subtracts x, y, and z components from a vector, subtracts one vector from another, or subtracts two independent vectors. The version of the method that substracts two vectors is a static method and returns a PVector, the others have no return value -- they act directly on the vector. See the examples for more context. 
+   * 
+   * @method sub
+   * @chainable
+   * @param {Number} x
+   * @param {Number} y
+   * @param {Number} z
+   * @return {PVector} The PVector object.
+   */
   PVector.prototype.sub = function (x, y, z) {
     if (x instanceof PVector) { return this.sub(x.x, x.y, x.z); }
     if (x instanceof Array) { return this.sub(x[0], x[1], x[2]); }
@@ -61,6 +122,15 @@ define(function (require) {
     return (x * x + y * y + z * z);
   };
 
+  /**
+   * Calculates the dot product of two vectors. 
+   * 
+   * @method dot
+   * @param {Number} x
+   * @param {Number} y
+   * @param {Number} z
+   * @return {Number/mag}
+   */
   PVector.prototype.dot = function (x, y, z) {
     if (x instanceof PVector) {
       return this.dot(x.x, x.y, x.z);

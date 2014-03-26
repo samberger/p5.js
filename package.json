@@ -1,5 +1,7 @@
 {
   "name": "p5",
+  "description": "p5 starts with the original goal of {@link http://www.processing.org/|Processing}, to make coding accessible for artists, designers, educators, beginners, and reinterpets this for today, for the web. The library is intended to introduce creative coding, web development, and provide a tie between the two.",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/lmccart/p5.js.git"
@@ -12,6 +14,7 @@
     "grunt-contrib-qunit": "~0.3.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-mocha": "~0.4.6",
+    "grunt-contrib-yuidoc": "0.5.2",
     "phantomjs": "~1.9.2-4",
     "grunt-lib-phantomjs": "~0.4.0",
     "grunt-contrib-requirejs": "~0.4.1",

@@ -1,8 +1,12 @@
+/**
+ * @module p5
+ */
 define(function (require) {
 
   'use strict';
-
+  
   var p5 = require('core');
+  
   var PVector = require('math.pvector');
 
   require('color.creating_reading');

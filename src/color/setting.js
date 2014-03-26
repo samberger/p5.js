@@ -1,4 +1,4 @@
-define(function (require) {
+define(function(require) {
 
   'use strict';
 
@@ -40,23 +40,21 @@ define(function (require) {
 
 
   /**
-  * getNormalizedColor For a number of different inputs,
-  *                    returns a color formatted as [r, g, b, a]
-  *
-  * @param {'array-like' object} args An 'array-like' object that
-  *                                   represents a list of arguments
-  *
-  * @return {Array} returns a color formatted as [r, g, b, a]
-  *                 input        ==> output
-  *                 g            ==> [g, g, g, 255]
-  *                 g,a          ==> [g, g, g, a]
-  *                 r, g, b      ==> [r, g, b, 255]
-  *                 r, g, b, a   ==> [r, g, b, a]
-  *                 [g]          ==> [g, g, g, 255]
-  *                 [g, a]       ==> [g, g, g, a]
-  *                 [r, g, b]    ==> [r, g, b, 255]
-  *                 [r, g, b, a] ==> [r, g, b, a]
-  */
+   * For a number of different inputs, returns a color formatted as [r, g, b, a].
+   * 
+   * @method getNormalizedColor 
+   * @param {Array-like} args An 'array-like' object that represents a list of arguments
+   * @return {Array} Returns a color formatted as [r, g, b, a]
+   *                 input        ==> output
+   *                 g            ==> [g, g, g, 255]
+   *                 g,a          ==> [g, g, g, a]
+   *                 r, g, b      ==> [r, g, b, 255]
+   *                 r, g, b, a   ==> [r, g, b, a]
+   *                 [g]          ==> [g, g, g, 255]
+   *                 [g, a]       ==> [g, g, g, a]
+   *                 [r, g, b]    ==> [r, g, b, 255]
+   *                 [r, g, b, a] ==> [r, g, b, a]
+   */
   p5.prototype.getNormalizedColor = function(args) {
     var r, g, b, a, rgba;
     var _args = typeof args[0].length === 'number' ? args[0] : args;
@@ -87,8 +85,8 @@ define(function (require) {
     var a = arr.map(function(val) {
       return Math.floor(val);
     });
-    var alpha = a[3] ? (a[3]/255.0) : 1;
-    return 'rgba('+a[0]+','+a[1]+','+a[2]+','+ alpha +')';
+    var alpha = a[3] ? (a[3] / 255.0) : 1;
+    return 'rgba(' + a[0] + ',' + a[1] + ',' + a[2] + ',' + alpha + ')';
   };
 
   return p5;

@@ -1,3 +1,6 @@
+/**
+@module constants
+*/
 define(function(require) {
 
   var PI = Math.PI;
@@ -13,12 +16,47 @@ define(function(require) {
     WAIT: 'wait',
 
     // TRIGONOMETRY
+    /**
+     * @property HALF_PI
+     * @type Number
+     * @final
+     */
     HALF_PI: PI / 2,
+    /**
+     * @property PI
+     * @type Number
+     * @final
+     */
     PI: PI,
+    /**
+     * @property QUARTER_PI
+     * @type Number
+     * @final
+     */
     QUARTER_PI: PI / 4,
+    /**
+     * @property TAU
+     * @type Number
+     * @final
+     */
     TAU: PI * 2,
+    /**
+     * @property TWO_PI
+     * @type Number
+     * @final
+     */
     TWO_PI: PI * 2,
+    /**
+     * @property DEGREES
+     * @type String
+     * @final
+     */
     DEGREES: 'degrees',
+    /**
+     * @property RADIANS
+     * @type String
+     * @final
+     */
     RADIANS: 'radians',
 
     // SHAPE

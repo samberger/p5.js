@@ -1,3 +1,8 @@
+/**
+@module mouse
+@requires core
+@requires constants
+*/
 define(function (require) {
 
   'use strict';

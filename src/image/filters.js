@@ -129,10 +129,10 @@ define(function (require) {
    * of creating a filter chain that executes without actually updating the canvas
    * in between everystep.
    *
-   * @param  {[type]} func   [description]
-   * @param  {[type]} canvas [description]
-   * @param  {[type]} level  [description]
-   * @return {[type]}        [description]
+   * @param  {Object} func   [description]
+   * @param  {Object} canvas [description]
+   * @param  {Object} level  [description]
+   * @return {Object}        [description]
    */
   Filters.apply = function (canvas, func, filterParam) {
     var ctx = canvas.getContext('2d');
