@@ -26,7 +26,27 @@ define(function(require) {
    * @param  {Number} start Angle to start the arc, specified in radians
    * @param  {Number} stop Angle to stop the arc, specified in radians
    * @param  {Mode} [mode] Optional parameter to determine the way of drawing the arc
-   * @return {p5} Returns the p5 object.
+   * @return {Object} Returns the p5 object.
+   * 
+   * @example <div><img src="http://processing.org/reference/images/arc_.png">
+<code>arc(50, 55, 50, 50, 0, HALF_PI);
+noFill();
+arc(50, 55, 60, 60, HALF_PI, PI);
+arc(50, 55, 70, 70, PI, PI+QUARTER_PI);
+arc(50, 55, 80, 80, PI+QUARTER_PI, TWO_PI);
+</code></div>
+
+<div><img src="http://processing.org/reference/images/arc_2.png">
+<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, OPEN);
+</code></div>
+
+<div><img src="http://processing.org/reference/images/arc_3.png">
+<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, CHORD);
+</code></div>
+
+<div><img src="http://processing.org/reference/images/arc_4.png">
+<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, PIE);
+</code></div>
    */
   p5.prototype.arc = function(a, b, c, d, start, stop, mode) {
     var vals = canvas.arcModeAdjust(a, b, c, d, this.settings.ellipseMode);

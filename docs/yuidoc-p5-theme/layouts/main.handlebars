@@ -1,62 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{htmlTitle}}</title>
-    <link rel="stylesheet" href="{{yuiGridsUrl}}">
-    <link rel="stylesheet" href="{{projectAssets}}/vendor/prettify/prettify-min.css">
-    <link rel="stylesheet" href="{{projectAssets}}/css/main.css" id="site_styles">
-    <link rel="stylesheet" href="{{projectAssets}}/css/custom.css">
-    <link rel="stylesheet" href="{{projectAssets}}/vendor/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="{{projectAssets}}/vendor/bootstrap/css/bootstrap-responsive.css">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{projectAssets}}/css/main.css">
     <link rel="shortcut icon" type="image/png" href="{{projectAssets}}/favicon.png">
-</head>
-<body class="yui3-skin-sam">
-<div class="navbar navbar-static-top"> <!-- navbar-fixed-top -->
-    <div class="navbar-inner">
-        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-        {{#if projectLogo}}
-	    <img alt="{{projectName}}" src="{{projectLogo}}" style="max-height: 65%;" title="{{projectName}}">
-        {{else}}
-	    <img alt="{{projectName}}" src="{{projectAssets}}/css/logo.png" style="max-height: 65%;" title="{{projectName}}">
-        {{/if}}
-            {{projectName}}
-        </h1>
-	<div class="nav">
-            <li class="divider-vertical"></li>
-            <li>
-                <p class="navbar-text">
-                    API Docs for <strong>p5 v.{{projectVersion}}</strong>
-                </p>
-            </li>
-        </div>
-        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='[{{#search classes allModules}}{{/search}}]'>
-        </form>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="span3">
-	    {{>sidebar}}
-        </div>
-        <div class="span9">
-            <!-- {{>options}} -->
-            <div class="apidocs">
-                <div id="docs-main">
-                    <div class="content">
-                        {{>layout_content}}
-                    </div>
-                </div>
+  </head>
+  <body>
+
+
+    <div class="site-wrapper">
+      <div class="cover-container">
+        <div class="masthead clearfix">
+          <div class="inner">
+
+            <div id="header" class="header">
+              <div class="masthead-brand">
+                {{#if projectLogo}}
+                <img alt="{{projectName}}" src="{{projectLogo}}" title="{{projectName}}">
+                {{else}}
+                <img alt="{{projectName}}" src="{{projectAssets}}/css/logo.png" title="{{projectName}}">
+                {{/if}}
+
+                <!--{{projectName}}-->
+
+                <span class="lead">Looking for something cool?</span>
+              </div>
+
+              <div id="search" class="search-wrapper"></div>
+
+              <ul id="menu" class="nav masthead-nav">
+                <!--<li class="active"><a href="#search">Search</a></li>-->
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#methods">Methods</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#events">Events</a></li>
+              </ul>
             </div>
+
+            <div id="container" > 
+              <!--class="container-fluid"-->
+              <div id="list" class="list-wrapper"></div>
+              <div id="item" class="item-wrapper apidocs"></div>
+              <div id="file" class="file-wrapper"></div>
+            </div>
+
+          </div>
         </div>
+
+      </div>
+
+
+      <div class="mastfoot">
+        <div class="inner">
+          <p>P5 API documentation | <a href="http://p5js.org/">Get P5</a> | <a href="https://github.com/lmccart/p5.js/issues">Issues?</a> | <a href="https://github.com/lmccart/p5.js">Contribute</a></p>
+        </div>
+      </div>
+
+
     </div>
-</div>
-<script src="{{projectAssets}}/vendor/jquery/jquery-1.11.0.min.js"></script>
-<script src="{{projectAssets}}/vendor/bootstrap/js/bootstrap.js"></script>
-<script src="{{projectAssets}}/vendor/prettify/prettify-min.js"></script>
-<script src="{{projectAssets}}/js/yuidoc-bootstrap.js"></script>
-<script>prettyPrint();</script>
-<script src="{{projectAssets}}/js/p5-docs.js"></script>
-</body>
+
+
+
+
+
+    <script src="{{projectAssets}}/js/config.js"></script>
+    <script data-main="main" src="{{projectAssets}}/js/vendor/require/require.min.js"></script>
+  </body>
 </html>

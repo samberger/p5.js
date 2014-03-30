@@ -21,7 +21,11 @@ module.exports = function (grunt) {
     },
     watch: {
       files: ['src/**/*.js'],
-      tasks: ['jshint', 'requirejs', 'jsdoc']
+      tasks: ['jshint', 'requirejs', 'jsdoc'],
+      docs: {
+        files: ['docs/yuidoc-p5-theme/assets/js/**/*.js', 'docs/yuidoc-p5-theme/assets/css/*.css'],
+        tasks: ['yuidoc'],
+      }
     },
 //    jsdoc: {
 //      dist: {
@@ -39,8 +43,8 @@ module.exports = function (grunt) {
         url: '<%= pkg.homepage %>',
         options: {
           paths: 'src/',
-          themedir: 'docs/yuidoc-bootstrap-theme/',
-          helpers: ["docs/yuidoc-bootstrap-theme/helpers/helpers.js"],
+          themedir: 'docs/yuidoc-p5-theme/',
+          helpers: ["docs/yuidoc-p5-theme/helpers/helpers.js"],
           outdir: 'docs/api/'
         }
       }

@@ -12,6 +12,7 @@ define(function (require) {
    * Sets touch points.
    * @event setTouchPoints
    * @param {Object} e The event object.
+   * @for p5
    */
   p5.prototype.setTouchPoints = function(e) {
     this._setProperty('touchX', e.changedTouches[0].pageX);
@@ -28,6 +29,7 @@ define(function (require) {
    * Listener for the touch start event.
    * @event ontouchstart
    * @param {Object} e The event object.
+   * @for p5
    */
   p5.prototype.ontouchstart = function(e) {
     this.setTouchPoints(e);
@@ -44,6 +46,7 @@ define(function (require) {
    * Listener for the touch move event.
    * @event ontouchmove
    * @param {Object} e The event object.
+   * @for p5
    */
   p5.prototype.ontouchmove = function(e) {
     this.setTouchPoints(e);
@@ -56,6 +59,7 @@ define(function (require) {
    * Listener for the touch end event.
    * @event ontouchend
    * @param {Object} e The event object.
+   * @for p5
    */
   p5.prototype.ontouchend = function(e) {
     this.setTouchPoints(e);

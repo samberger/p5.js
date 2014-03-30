@@ -20,42 +20,49 @@ define(function(require) {
      * @property HALF_PI
      * @type Number
      * @final
+     * @for p5
      */
     HALF_PI: PI / 2,
     /**
      * @property PI
      * @type Number
      * @final
+     * @for p5
      */
     PI: PI,
     /**
      * @property QUARTER_PI
      * @type Number
      * @final
+     * @for p5
      */
     QUARTER_PI: PI / 4,
     /**
      * @property TAU
      * @type Number
      * @final
+     * @for p5
      */
     TAU: PI * 2,
     /**
      * @property TWO_PI
      * @type Number
      * @final
+     * @for p5
      */
     TWO_PI: PI * 2,
     /**
      * @property DEGREES
      * @type String
      * @final
+     * @for p5
      */
     DEGREES: 'degrees',
     /**
      * @property RADIANS
      * @type String
      * @final
+     * @for p5
      */
     RADIANS: 'radians',
 

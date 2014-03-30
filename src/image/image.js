@@ -28,6 +28,7 @@ define(function (require) {
    * @param  {Integer} width
    * @param  {Integer} height
    * @return {PImage}
+   * @for p5
    */
   p5.prototype.createImage = function(width, height) {
     return new PImage(width, height, this);
@@ -148,6 +149,7 @@ Before using the pixels[] array, be sure to use the loadPixels() method on the i
    * Loads the pixels data for this image into the [pixels] attribute.
    * 
    * @method loadPixels
+   * @for PImage
    */
   PImage.prototype.loadPixels = function(){
     var x = 0;
@@ -179,6 +181,7 @@ Before using the pixels[] array, be sure to use the loadPixels() method on the i
    *                               underlying canvas
    * @param  {Integer|undefined} h height of the target update area for the
    *                               underlying canvas
+   * @for PImage
    */
   PImage.prototype.updatePixels = function(x, y, w, h){
     if (x === undefined && y === undefined &&
@@ -214,6 +217,7 @@ Before using the pixels[] array, be sure to use the loadPixels() method on the i
    *
    * Returns undefined if the region is outside the bounds of the image
    *
+   * @for PImage
    * @param  {Integer} x
    * @param  {Integer} y
    * @param  {Integer} w width
@@ -270,6 +274,7 @@ Before using the pixels[] array, be sure to use the loadPixels() method on the i
    *
    * TODO: Should me make the update operation toggleable?
    *
+   * @for PImage
    * @param {Integer} x
    * @param {Integer} y
    * @param {PImage|[Integer]}  imageData a pImage or an array representing a color.
@@ -291,6 +296,7 @@ Before using the pixels[] array, be sure to use the loadPixels() method on the i
 
   /**
    * Resize this PImage.
+   * @for PImage
    * @param  {[type]} width  [description]
    * @param  {[type]} height [description]
    * @return {[type]}        [description]
@@ -338,6 +344,7 @@ Before using the pixels[] array, be sure to use the loadPixels() method on the i
    * automatically resize source pixels to fit the specified
    * target region.
    *
+   * @for PImage
    * @param  {PImage|undefined} srcImage source image
    * @param  {Integer} sx X coordinate of the source's upper left corner
    * @param  {Integer} sy Y coordinate of the source's upper left corner
@@ -386,6 +393,7 @@ Before using the pixels[] array, be sure to use the loadPixels() method on the i
    * image and using it's alpha channel as an alpha channel for
    * this image.
    * 
+   * @for PImage
    * @param  {PImage|undefined} srcImage source image
    *
    * TODO: - Accept an array of alpha values.
@@ -413,6 +421,7 @@ Before using the pixels[] array, be sure to use the loadPixels() method on the i
   /**
    * Applies an image filter to a PImage
    * 
+   * @for PImage
    * @param  {String} operation one of threshold, gray, invert, posterize and opaque
    *                            see Filters.js for docs on each available filter
    * @param  {Number|undefined} value
@@ -425,6 +434,7 @@ Before using the pixels[] array, be sure to use the loadPixels() method on the i
    * Copies a region of pixels from one image to another, using a specified
    * blend mode to do the operation.
    * 
+   * @for PImage
    * @param  {PImage|undefined} srcImage source image
    * @param  {Integer} sx X coordinate of the source's upper left corner
    * @param  {Integer} sy Y coordinate of the source's upper left corner
@@ -459,6 +469,7 @@ Before using the pixels[] array, be sure to use the loadPixels() method on the i
    * Saves the image to a file and forces the browser to download it.
    * Supports png and jpg.
    * 
+   * @for PImage
    * @param  {[type]} extension
    *
    * TODO: There doesn't seem to be a way to give the force the

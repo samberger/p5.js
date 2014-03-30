@@ -6,15 +6,15 @@
         "url": ""
     },
     "files": {
-        "src/color/setting.js": {
-            "name": "src/color/setting.js",
+        "../src/color/setting.js": {
+            "name": "../src/color/setting.js",
             "modules": {},
             "classes": {},
             "fors": {},
             "namespaces": {}
         },
-        "src/core/core.js": {
-            "name": "src/core/core.js",
+        "../src/core/core.js": {
+            "name": "../src/core/core.js",
             "modules": {
                 "core": 1
             },
@@ -24,15 +24,15 @@
             "fors": {},
             "namespaces": {}
         },
-        "src/image/filters.js": {
-            "name": "src/image/filters.js",
+        "../src/image/filters.js": {
+            "name": "../src/image/filters.js",
             "modules": {},
             "classes": {},
             "fors": {},
             "namespaces": {}
         },
-        "src/image/image.js": {
-            "name": "src/image/image.js",
+        "../src/image/image.js": {
+            "name": "../src/image/image.js",
             "modules": {
                 "image": 1
             },
@@ -40,12 +40,13 @@
                 "PImage": 1
             },
             "fors": {
-                "p5": 1
+                "p5": 1,
+                "PImage": 1
             },
             "namespaces": {}
         },
-        "src/input/mouse.js": {
-            "name": "src/input/mouse.js",
+        "../src/input/mouse.js": {
+            "name": "../src/input/mouse.js",
             "modules": {
                 "mouse": 1
             },
@@ -53,24 +54,26 @@
             "fors": {},
             "namespaces": {}
         },
-        "src/input/touch.js": {
-            "name": "src/input/touch.js",
+        "../src/input/touch.js": {
+            "name": "../src/input/touch.js",
             "modules": {
                 "touch": 1
             },
             "classes": {},
-            "fors": {},
+            "fors": {
+                "p5": 1
+            },
             "namespaces": {}
         },
-        "src/math/noise.js": {
-            "name": "src/math/noise.js",
+        "../src/math/noise.js": {
+            "name": "../src/math/noise.js",
             "modules": {},
             "classes": {},
             "fors": {},
             "namespaces": {}
         },
-        "src/math/pvector.js": {
-            "name": "src/math/pvector.js",
+        "../src/math/pvector.js": {
+            "name": "../src/math/pvector.js",
             "modules": {
                 "pvector": 1
             },
@@ -80,15 +83,15 @@
             "fors": {},
             "namespaces": {}
         },
-        "src/math/random.js": {
-            "name": "src/math/random.js",
+        "../src/math/random.js": {
+            "name": "../src/math/random.js",
             "modules": {},
             "classes": {},
             "fors": {},
             "namespaces": {}
         },
-        "src/shape/2d_primitives.js": {
-            "name": "src/shape/2d_primitives.js",
+        "../src/shape/2d_primitives.js": {
+            "name": "../src/shape/2d_primitives.js",
             "modules": {},
             "classes": {},
             "fors": {
@@ -96,15 +99,15 @@
             },
             "namespaces": {}
         },
-        "src/shape/curves.js": {
-            "name": "src/shape/curves.js",
+        "../src/shape/curves.js": {
+            "name": "../src/shape/curves.js",
             "modules": {},
             "classes": {},
             "fors": {},
             "namespaces": {}
         },
-        "src/var/canvas.js": {
-            "name": "src/var/canvas.js",
+        "../src/var/canvas.js": {
+            "name": "../src/var/canvas.js",
             "modules": {
                 "canvas": 1
             },
@@ -112,17 +115,19 @@
             "fors": {},
             "namespaces": {}
         },
-        "src/var/constants.js": {
-            "name": "src/var/constants.js",
+        "../src/var/constants.js": {
+            "name": "../src/var/constants.js",
             "modules": {
                 "constants": 1
             },
             "classes": {},
-            "fors": {},
+            "fors": {
+                "p5": 1
+            },
             "namespaces": {}
         },
-        "src/var/shim.js": {
-            "name": "src/var/shim.js",
+        "../src/var/shim.js": {
+            "name": "../src/var/shim.js",
             "modules": {
                 "shim": 1
             },
@@ -130,8 +135,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "src/p5.js": {
-            "name": "src/p5.js",
+        "../src/p5.js": {
+            "name": "../src/p5.js",
             "modules": {
                 "p5": 1
             },
@@ -150,7 +155,7 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 17,
             "requires": [
                 "shim",
@@ -164,12 +169,13 @@
                 "PImage": 1
             },
             "fors": {
-                "p5": 1
+                "p5": 1,
+                "PImage": 1
             },
             "namespaces": {},
             "tag": "module",
-            "file": "src/image/image.js",
-            "line": 125,
+            "file": "../src/image/image.js",
+            "line": 126,
             "requires": [
                 "core",
                 "canvas",
@@ -184,7 +190,7 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "src/input/mouse.js",
+            "file": "../src/input/mouse.js",
             "line": 1,
             "requires": [
                 "core",
@@ -195,10 +201,12 @@
             "name": "touch",
             "submodules": {},
             "classes": {},
-            "fors": {},
+            "fors": {
+                "p5": 1
+            },
             "namespaces": {},
             "tag": "module",
-            "file": "src/input/touch.js",
+            "file": "../src/input/touch.js",
             "line": 1,
             "requires": [
                 "core"
@@ -215,7 +223,7 @@
             },
             "namespaces": {},
             "tag": "module",
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 8
         },
         "canvas": {
@@ -225,7 +233,7 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "src/var/canvas.js",
+            "file": "../src/var/canvas.js",
             "line": 1,
             "requires": [
                 "constants"
@@ -235,10 +243,12 @@
             "name": "constants",
             "submodules": {},
             "classes": {},
-            "fors": {},
+            "fors": {
+                "p5": 1
+            },
             "namespaces": {},
             "tag": "module",
-            "file": "src/var/constants.js",
+            "file": "../src/var/constants.js",
             "line": 1
         },
         "shim": {
@@ -248,7 +258,7 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "src/var/shim.js",
+            "file": "../src/var/shim.js",
             "line": 1
         },
         "p5": {
@@ -258,7 +268,7 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "src/p5.js",
+            "file": "../src/p5.js",
             "line": 1
         }
     },
@@ -273,7 +283,7 @@
             "extension_for": [],
             "module": "core",
             "namespace": "",
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 17,
             "description": "The p5 constructor function. If the user has created a global setup function, assume \"beginner mode\" and make everything global.",
             "is_constructor": 1,
@@ -302,8 +312,8 @@
             "extension_for": [],
             "module": "image",
             "namespace": "",
-            "file": "src/image/image.js",
-            "line": 125,
+            "file": "../src/image/image.js",
+            "line": 126,
             "description": "Creates a new PImage. A PImage is a canvas backed representation of an image.\np5 can display .gif, .jpg and .png images. Images may be displayed in 2D and 3D space. Before an image is used, it must be loaded with the loadImage() function. The PImage class contains fields for the width and height of the image, as well as an array called pixels[] that contains the values for every pixel in the image. The methods described below allow easy access to the image's pixels and alpha channel and simplify the process of compositing.\n\nBefore using the pixels[] array, be sure to use the loadPixels() method on the image to make sure that the pixel data is properly loaded.",
             "is_constructor": 1,
             "params": [
@@ -334,7 +344,7 @@
             "extension_for": [],
             "module": "pvector",
             "namespace": "",
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 8,
             "description": "A class to describe a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector. A vector is an entity that has both magnitude and direction. The datatype, however, stores the components of the vector (x,y for 2D, and x,y,z for 3D). The magnitude and direction can be accessed via the methods mag() and heading().\n\nIn many of the Processing examples, you will see PVector used to describe a position, velocity, or acceleration. For example, if you consider a rectangle moving across the screen, at any given instant it has a position (a vector that points from the origin to its location), a velocity (the rate at which the object's position changes per time unit, expressed as a vector), and acceleration (the rate at which the object's velocity changes per time unit, expressed as a vector). Since vectors represent groupings of values, we cannot simply use traditional addition/multiplication/etc. Instead, we'll need to do some \"vector\" math, which is made easy by the methods inside the PVector class.",
             "is_constructor": 1,
@@ -362,7 +372,7 @@
     },
     "classitems": [
         {
-            "file": "src/color/setting.js",
+            "file": "../src/color/setting.js",
             "line": 42,
             "description": "For a number of different inputs, returns a color formatted as [r, g, b, a].",
             "itemtype": "method",
@@ -381,7 +391,7 @@
             "class": "p5"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 28,
             "description": "Keep a reference to when this instance was created (timestamp).",
             "itemtype": "property",
@@ -391,7 +401,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 35,
             "description": "Asynchronous files preload counter.",
             "itemtype": "property",
@@ -401,7 +411,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 42,
             "description": "Whether the instance of p5 is global or not.",
             "itemtype": "property",
@@ -411,7 +421,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 50,
             "description": "Contains the number of frames that have been displayed since the program started. Inside setup() the value is 0, after the first iteration of draw it is 1, etc.",
             "itemtype": "property",
@@ -421,7 +431,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 57,
             "description": "Contains the approximate frame rate of a running sketch. The initial value is 10 fps and is updated with each frame. The value is averaged over several frames, and so will only be accurate after the draw function has run 5-10 times.",
             "itemtype": "property",
@@ -431,7 +441,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 68,
             "description": "Confirms if the current canvas is \"focused,\" meaning that it is active and will accept mouse or keyboard input. This variable is \"true\" if it is focused and \"false\" if not.",
             "itemtype": "property",
@@ -441,7 +451,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 75,
             "description": "Variable that stores the width of the entire screen display. This is used to run a full-screen program on any display size.",
             "itemtype": "property",
@@ -451,7 +461,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 82,
             "description": "Variable that stores the height of the entire screen display. This is used to run a full-screen program on any display size.",
             "itemtype": "property",
@@ -461,7 +471,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 95,
             "description": "The variable mouseX always contains the current horizontal coordinate of the mouse.",
             "itemtype": "property",
@@ -471,7 +481,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 102,
             "description": "The variable mouseY always contains the current vertical coordinate of the mouse.",
             "itemtype": "property",
@@ -481,7 +491,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 109,
             "description": "The variable pmouseY always contains the horizontal position of the mouse in the frame previous to the current frame.",
             "itemtype": "property",
@@ -491,7 +501,7 @@
             "module": "core"
         },
         {
-            "file": "src/core/core.js",
+            "file": "../src/core/core.js",
             "line": 116,
             "description": "The variable pmouseY always contains the vertical position of the mouse in the frame previous to the current frame.",
             "type": "Number",
@@ -499,14 +509,14 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 5,
             "description": "This module defines the filters for use with image buffers.\n\nThis module is basically a collection of functions stored in an object\nas opposed to modules. The functions are destructive, modifying\nthe passed in canvas rather than creating a copy.\n\nGenerally speaking users of this module will use the Filters.apply method\non a canvas to create an effect.\n\nA number of functions are borrowed/adapted from http://www.html5rocks.com/en/tutorials/canvas/imagefilters/\nor the java processing implmentation.",
             "class": "p5",
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 30,
             "description": "Returns the pixel buffer for a canvas",
             "access": "private",
@@ -526,7 +536,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 47,
             "description": "Returns a 32 bit number containing ARGB data at ith pixel in the\n1D array containing pixels data.",
             "access": "private",
@@ -551,7 +561,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 65,
             "description": "Modifies pixels RGBA values to values contained in the data object.",
             "access": "private",
@@ -572,7 +582,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 84,
             "description": "Returns the ImageData object for a canvas\nhttps://developer.mozilla.org/en-US/docs/Web/API/ImageData",
             "access": "private",
@@ -592,7 +602,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 102,
             "description": "Returns a blank ImageData object.",
             "access": "private",
@@ -617,7 +627,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 118,
             "description": "Applys a filter function to a canvas.\n\nThe difference between this and the actual filter functions defined below\nis that the filter functions generally modify the pixel buffer but do\nnot actually put that data back to the canvas (where it would actually\nupdate what is visible). By contrast this method does make the changes actually\nvisible in the canvas.\n\nThe apply method is the method that callers of this module would generally use.\nIt has been separated from the actual filters to support an advanced use case\nof creating a filter chain that executes without actually updating the canvas\nin between everystep.",
             "params": [
@@ -645,7 +655,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 157,
             "description": "Converts the image to black and white pixels depending if they are above or\nbelow the threshold defined by the level parameter. The parameter must be\nbetween 0.0 (black) and 1.0 (white). If no level is specified, 0.5 is used.\n\nBorrowed from http://www.html5rocks.com/en/tutorials/canvas/imagefilters/",
             "params": [
@@ -664,7 +674,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 192,
             "description": "Converts any colors in the image to grayscale equivalents. No parameter is used.\n\nBorrowed from http://www.html5rocks.com/en/tutorials/canvas/imagefilters/",
             "params": [
@@ -678,7 +688,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 213,
             "description": "Sets the alpha channel to entirely opaque. No parameter is used.",
             "params": [
@@ -692,7 +702,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 228,
             "description": "Sets each pixel to its inverse value. No parameter is used.",
             "params": [
@@ -706,7 +716,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 244,
             "description": "Limits each channel of the image to the number of colors specified as\nthe parameter. The parameter can be set to values between 2 and 255, but\nresults are most noticeable in the lower ranges.\n\nAdapted from java based processing implementation",
             "params": [
@@ -725,7 +735,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 276,
             "description": "reduces the bright areas in an image",
             "params": [
@@ -739,7 +749,7 @@
             "module": "core"
         },
         {
-            "file": "src/image/filters.js",
+            "file": "../src/image/filters.js",
             "line": 347,
             "description": "increases the bright areas in an image",
             "params": [
@@ -753,14 +763,14 @@
             "module": "core"
         },
         {
-            "file": "src/image/image.js",
+            "file": "../src/image/image.js",
             "line": 10,
             "description": "This module defines the PImage class and P5 methods for\ndrawing images to the main display canvas.",
             "class": "p5",
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
+            "file": "../src/image/image.js",
             "line": 26,
             "description": "Create a new empty PImage object.",
             "params": [
@@ -783,8 +793,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 36,
+            "file": "../src/image/image.js",
+            "line": 37,
             "description": "Loads an image from a path and creates a PImage from it.\n\nThe image may not be immediately available for rendering\nIf you want to ensure that the image is ready before doing\nanything with it you can do perform those operations in the\ncallback.",
             "itemtype": "method",
             "name": "loadImage",
@@ -808,8 +818,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 77,
+            "file": "../src/image/image.js",
+            "line": 78,
             "description": "Draw an image to the main canvas of the p5js sketch",
             "itemtype": "method",
             "name": "image",
@@ -844,8 +854,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 99,
+            "file": "../src/image/image.js",
+            "line": 100,
             "description": "Set image mode. Modifies the location from which images are drawn by changing the way in which parameters given to image() are intepreted.\n\nThe default mode is imageMode(CORNER), which interprets the second and third parameters of image() as the upper-left corner of the image. If two additional parameters are specified, they are used to set the image's width and height.\n\nimageMode(CORNERS) interprets the second and third parameters of image() as the location of one corner, and the fourth and fifth parameters as the opposite corner.\n\nimageMode(CENTER) interprets the second and third parameters of image() as the image's center point. If two additional parameters are specified, they are used to set the image's width and height.\n\nThe parameter must be written in ALL CAPS because Processing is a case-sensitive language.",
             "itemtype": "method",
             "name": "imageMode",
@@ -860,8 +870,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 147,
+            "file": "../src/image/image.js",
+            "line": 148,
             "description": "Loads the pixels data for this image into the [pixels] attribute.",
             "itemtype": "method",
             "name": "loadPixels",
@@ -869,8 +879,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 169,
+            "file": "../src/image/image.js",
+            "line": 171,
             "description": "Updates the backing canvas for this image with the contents of\nthe [pixels] array.",
             "params": [
                 {
@@ -898,8 +908,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 207,
+            "file": "../src/image/image.js",
+            "line": 210,
             "description": "Get a region of pixels from an image.\n\nIf no params are passed, those whole image is returned,\nif x and y are the only params passed a single pixel is extracted\nif all params are passed a rectangle region is extracted and a Pimage is\nreturned.\n\nReturns undefined if the region is outside the bounds of the image",
             "params": [
                 {
@@ -931,8 +941,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 263,
+            "file": "../src/image/image.js",
+            "line": 267,
             "description": "Set the color of a single pixel or write an image into\nthis PImage.\n\nNote that for a large number of pixels this will\nbe slower than directly manipulating the pixels array\nand then calling updatePixels()\n\nTODO: Should me make the update operation toggleable?",
             "params": [
                 {
@@ -955,8 +965,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 292,
+            "file": "../src/image/image.js",
+            "line": 297,
             "description": "Resize this PImage.",
             "params": [
                 {
@@ -978,8 +988,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 334,
+            "file": "../src/image/image.js",
+            "line": 340,
             "description": "Copies a region of pixels from one image to another. If no\nsrcImage is specified this is used as the source. If the source\nand destination regions aren't the same size, it will\nautomatically resize source pixels to fit the specified\ntarget region.",
             "params": [
                 {
@@ -1032,8 +1042,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 384,
+            "file": "../src/image/image.js",
+            "line": 391,
             "description": "Masks part of an image from displaying by loading another\nimage and using it's alpha channel as an alpha channel for\nthis image.",
             "params": [
                 {
@@ -1046,8 +1056,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 413,
+            "file": "../src/image/image.js",
+            "line": 421,
             "description": "Applies an image filter to a PImage",
             "params": [
                 {
@@ -1065,8 +1075,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 424,
+            "file": "../src/image/image.js",
+            "line": 433,
             "description": "Copies a region of pixels from one image to another, using a specified\nblend mode to do the operation.",
             "params": [
                 {
@@ -1124,8 +1134,8 @@
             "module": "image"
         },
         {
-            "file": "src/image/image.js",
-            "line": 458,
+            "file": "../src/image/image.js",
+            "line": 468,
             "description": "Saves the image to a file and forces the browser to download it.\nSupports png and jpg.",
             "params": [
                 {
@@ -1138,7 +1148,7 @@
             "module": "image"
         },
         {
-            "file": "src/input/touch.js",
+            "file": "../src/input/touch.js",
             "line": 11,
             "description": "Sets touch points.",
             "itemtype": "event",
@@ -1150,12 +1160,12 @@
                     "type": "Object"
                 }
             ],
-            "class": "PVector",
+            "class": "p5",
             "module": "touch"
         },
         {
-            "file": "src/input/touch.js",
-            "line": 27,
+            "file": "../src/input/touch.js",
+            "line": 28,
             "description": "Listener for the touch start event.",
             "itemtype": "event",
             "name": "ontouchstart",
@@ -1166,12 +1176,12 @@
                     "type": "Object"
                 }
             ],
-            "class": "PVector",
+            "class": "p5",
             "module": "touch"
         },
         {
-            "file": "src/input/touch.js",
-            "line": 43,
+            "file": "../src/input/touch.js",
+            "line": 45,
             "description": "Listener for the touch move event.",
             "itemtype": "event",
             "name": "ontouchmove",
@@ -1182,12 +1192,12 @@
                     "type": "Object"
                 }
             ],
-            "class": "PVector",
+            "class": "p5",
             "module": "touch"
         },
         {
-            "file": "src/input/touch.js",
-            "line": 55,
+            "file": "../src/input/touch.js",
+            "line": 58,
             "description": "Listener for the touch end event.",
             "itemtype": "event",
             "name": "ontouchend",
@@ -1198,11 +1208,11 @@
                     "type": "Object"
                 }
             ],
-            "class": "PVector",
+            "class": "p5",
             "module": "touch"
         },
         {
-            "file": "src/math/noise.js",
+            "file": "../src/math/noise.js",
             "line": 48,
             "description": "Returns the Perlin noise value at specified coordinates. Perlin noise is\na random sequence generator producing a more natural ordered, harmonic\nsuccession of numbers compared to the standard <b>random()</b> function.\nIt was invented by Ken Perlin in the 1980s and been used since in\ngraphical applications to produce procedural textures, natural motion,\nshapes, terrains etc.<br /><br /> The main difference to the\n<b>random()</b> function is that Perlin noise is defined in an infinite\nn-dimensional space where each pair of coordinates corresponds to a\nfixed semi-random value (fixed only for the lifespan of the program).\nThe resulting value will always be between 0.0 and 1.0. Processing can\ncompute 1D, 2D and 3D noise, depending on the number of coordinates\ngiven. The noise value can be animated by moving through the noise space\nas demonstrated in the example above. The 2nd and 3rd dimension can also\nbe interpreted as time.<br /><br />The actual noise is structured\nsimilar to an audio signal, in respect to the function's use of\nfrequencies. Similar to the concept of harmonics in physics, perlin\nnoise is computed over several octaves which are added together for the\nfinal result. <br /><br />Another way to adjust the character of the\nresulting sequence is the scale of the input coordinates. As the\nfunction works within an infinite space the value of the coordinates\ndoesn't matter as such, only the distance between successive coordinates\ndoes (eg. when using <b>noise()</b> within a loop). As a general rule\nthe smaller the difference between coordinates, the smoother the\nresulting noise sequence will be. Steps of 0.005-0.03 work best for most\napplications, but this will differ depending on use.",
             "params": [
@@ -1230,7 +1240,7 @@
             "module": "touch"
         },
         {
-            "file": "src/math/noise.js",
+            "file": "../src/math/noise.js",
             "line": 163,
             "description": "Adjusts the character and level of detail produced by the Perlin noise\n function. Similar to harmonics in physics, noise is computed over\n several octaves. Lower octaves contribute more to the output signal and\n as such define the overal intensity of the noise, whereas higher octaves\n create finer grained details in the noise sequence. By default, noise is\n computed over 4 octaves with each octave contributing exactly half than\n its predecessor, starting at 50% strength for the 1st octave. This\n falloff amount can be changed by adding an additional function\n parameter. Eg. a falloff factor of 0.75 means each octave will now have\n 75% impact (25% less) of the previous lower octave. Any value between\n 0.0 and 1.0 is valid, however note that values greater than 0.5 might\n result in greater than 1.0 values returned by <b>noise()</b>.<br /><br\n />By changing these parameters, the signal created by the <b>noise()</b>\n function can be adapted to fit very specific needs and characteristics.",
             "params": [
@@ -1249,14 +1259,14 @@
             "module": "touch"
         },
         {
-            "file": "src/math/noise.js",
+            "file": "../src/math/noise.js",
             "line": 188,
             "description": "NOT IMPLEMENTED YET!\n Sets the seed value for <b>noise()</b>. By default, <b>noise()</b>\n produces different results each time the program is run. Set the\n <b>value</b> parameter to a constant to return the same pseudo-random\n numbers each time the software is run.",
             "class": "PVector",
             "module": "touch"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 19,
             "description": "The x component of the vector",
             "itemtype": "property",
@@ -1266,7 +1276,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 25,
             "description": "The y component of the vector",
             "itemtype": "property",
@@ -1276,7 +1286,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 31,
             "description": "The z component of the vector",
             "itemtype": "property",
@@ -1286,7 +1296,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 39,
             "description": "Sets the x, y, and z component of the vector using three separate variables, the data from a PVector, or the values from a float array.",
             "itemtype": "method",
@@ -1319,7 +1329,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 55,
             "description": "Gets a copy of the vector, returns a PVector object.",
             "itemtype": "method",
@@ -1332,7 +1342,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 64,
             "description": "Adds x, y, and z components to a vector, adds one vector to another, or adds two independent vectors together. The version of the method that adds two vectors together is a static method and returns a PVector, the others have no return value -- they act directly on the vector. See the examples for more context.",
             "itemtype": "method",
@@ -1363,7 +1373,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 83,
             "description": "Subtracts x, y, and z components from a vector, subtracts one vector from another, or subtracts two independent vectors. The version of the method that substracts two vectors is a static method and returns a PVector, the others have no return value -- they act directly on the vector. See the examples for more context.",
             "itemtype": "method",
@@ -1394,7 +1404,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 125,
             "description": "Calculates the dot product of two vectors.",
             "itemtype": "method",
@@ -1424,7 +1434,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 203,
             "description": "Make a new 2D unit vector from an angle",
             "params": [
@@ -1442,7 +1452,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 213,
             "description": "Make a new 2D unit vector from a random angle",
             "return": {
@@ -1453,7 +1463,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/pvector.js",
+            "file": "../src/math/pvector.js",
             "line": 223,
             "description": "Make a new random 3D unit vector.",
             "return": {
@@ -1464,7 +1474,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/math/random.js",
+            "file": "../src/math/random.js",
             "line": 18,
             "description": "Return a random number.\n\nTakes either 0, 1 or 2 arguments.\nIf no argument is given, returns a random number between 0 and 1.\nIf one argument is given, returns a random number between 0 and the number.\nIf two arguments are given, returns a random number between them, inclusive.",
             "params": [
@@ -1487,14 +1497,14 @@
             "module": "pvector"
         },
         {
-            "file": "src/shape/2d_primitives.js",
+            "file": "../src/shape/2d_primitives.js",
             "line": 1,
             "description": "Provides methods to draw 2d primitives.",
             "class": "p5",
             "module": "pvector"
         },
         {
-            "file": "src/shape/2d_primitives.js",
+            "file": "../src/shape/2d_primitives.js",
             "line": 13,
             "description": "Draw an arc.\n\nIf a,b,c,d,start and stop are the only params provided, draws an\nopen pie.\nIf mode is provided draws the arc either open, chord or pie, dependant\non the variable provided.",
             "itemtype": "method",
@@ -1539,14 +1549,17 @@
             ],
             "return": {
                 "description": "Returns the p5 object.",
-                "type": "P5"
+                "type": "Object"
             },
+            "example": [
+                " <div><img src=\"http://processing.org/reference/images/arc_.png\">\n<code>arc(50, 55, 50, 50, 0, HALF_PI);\nnoFill();\narc(50, 55, 60, 60, HALF_PI, PI);\narc(50, 55, 70, 70, PI, PI+QUARTER_PI);\narc(50, 55, 80, 80, PI+QUARTER_PI, TWO_PI);\n</code></div>\n\n<div><img src=\"http://processing.org/reference/images/arc_2.png\">\n<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, OPEN);\n</code></div>\n\n<div><img src=\"http://processing.org/reference/images/arc_3.png\">\n<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, CHORD);\n</code></div>\n\n<div><img src=\"http://processing.org/reference/images/arc_4.png\">\n<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, PIE);\n</code></div>"
+            ],
             "class": "p5",
             "module": "pvector"
         },
         {
-            "file": "src/shape/2d_primitives.js",
-            "line": 54,
+            "file": "../src/shape/2d_primitives.js",
+            "line": 74,
             "description": "Draws an ellipse (oval) to the screen. An ellipse with equal width and height is a circle. By default, the first two parameters set the location, and the third and fourth parameters set the shape's width and height. The origin may be changed with the ellipseMode() function.",
             "itemtype": "method",
             "name": "ellipse",
@@ -1580,8 +1593,8 @@
             "module": "pvector"
         },
         {
-            "file": "src/shape/2d_primitives.js",
-            "line": 86,
+            "file": "../src/shape/2d_primitives.js",
+            "line": 106,
             "description": "Draws a line (a direct path between two points) to the screen. The version of line() with four parameters draws the line in 2D. To color a line, use the stroke() function. A line cannot be filled, therefore the fill() function will not affect the color of a line. 2D lines are drawn with a width of one pixel by default, but this can be changed with the strokeWeight() function. The version with six parameters allows the line to be placed anywhere within XYZ space. Drawing this shape in 3D with the z parameter requires the P3D parameter in combination with size() as shown in the above example.",
             "itemtype": "method",
             "name": "line",
@@ -1615,8 +1628,8 @@
             "module": "pvector"
         },
         {
-            "file": "src/shape/2d_primitives.js",
-            "line": 108,
+            "file": "../src/shape/2d_primitives.js",
+            "line": 128,
             "description": "Draws a point, a coordinate in space at the dimension of one pixel. The first parameter is the horizontal value for the point, the second value is the vertical value for the point, and the optional third value is the depth value. Drawing this shape in 3D with the z parameter requires the P3D parameter in combination with size() as shown in the above example.",
             "params": [
                 {
@@ -1638,8 +1651,8 @@
             "module": "pvector"
         },
         {
-            "file": "src/shape/2d_primitives.js",
-            "line": 136,
+            "file": "../src/shape/2d_primitives.js",
+            "line": 156,
             "description": "Draw a quad. A quad is a quadrilateral, a four sided polygon. It is similar to a rectangle, but the angles between its edges are not constrained to ninety degrees. The first pair of parameters (x1,y1) sets the first vertex and the subsequent pairs should proceed clockwise or counter-clockwise around the defined shape.",
             "itemtype": "method",
             "name": "quad",
@@ -1693,7 +1706,7 @@
             "module": "pvector"
         },
         {
-            "file": "src/shape/curves.js",
+            "file": "../src/shape/curves.js",
             "line": 45,
             "description": "Sets the resolution at which curves display.\n\nThe default value is 20.\n\nReturns void",
             "params": [
@@ -1703,11 +1716,11 @@
                     "type": "Number"
                 }
             ],
-            "class": "",
+            "class": "p5",
             "module": "pvector"
         },
         {
-            "file": "src/shape/curves.js",
+            "file": "../src/shape/curves.js",
             "line": 60,
             "description": "Calculate a point on the Curve\n\nEvaluates the Bezier at point t for points a, b, c, d.\nThe parameter t varies between 0 and 1, a and d are points\non the curve, and b and c are the control points.\nThis can be done once with the x coordinates and a second time\nwith the y coordinates to get the location of a curve at t.\n\nReturns float",
             "params": [
@@ -1737,11 +1750,11 @@
                     "type": "Number"
                 }
             ],
-            "class": "",
+            "class": "p5",
             "module": "pvector"
         },
         {
-            "file": "src/shape/curves.js",
+            "file": "../src/shape/curves.js",
             "line": 88,
             "description": "Calculates the tangent of a point on a curve\n\nEvaluates the tangent at point t for points a, b, c, d.\nThe parameter t varies between 0 and 1, a and d are points\non the curve, and b and c are the control points\n\nReturns float",
             "params": [
@@ -1771,236 +1784,236 @@
                     "type": "Number"
                 }
             ],
-            "class": "",
+            "class": "p5",
             "module": "pvector"
         },
         {
-            "file": "src/var/constants.js",
+            "file": "../src/var/constants.js",
             "line": 19,
             "itemtype": "property",
             "name": "HALF_PI",
             "type": "Number",
             "final": 1,
-            "class": "",
+            "class": "p5",
             "module": "constants"
         },
         {
-            "file": "src/var/constants.js",
-            "line": 25,
+            "file": "../src/var/constants.js",
+            "line": 26,
             "itemtype": "property",
             "name": "PI",
             "type": "Number",
             "final": 1,
-            "class": "",
+            "class": "p5",
             "module": "constants"
         },
         {
-            "file": "src/var/constants.js",
-            "line": 31,
+            "file": "../src/var/constants.js",
+            "line": 33,
             "itemtype": "property",
             "name": "QUARTER_PI",
             "type": "Number",
             "final": 1,
-            "class": "",
+            "class": "p5",
             "module": "constants"
         },
         {
-            "file": "src/var/constants.js",
-            "line": 37,
+            "file": "../src/var/constants.js",
+            "line": 40,
             "itemtype": "property",
             "name": "TAU",
             "type": "Number",
             "final": 1,
-            "class": "",
+            "class": "p5",
             "module": "constants"
         },
         {
-            "file": "src/var/constants.js",
-            "line": 43,
+            "file": "../src/var/constants.js",
+            "line": 47,
             "itemtype": "property",
             "name": "TWO_PI",
             "type": "Number",
             "final": 1,
-            "class": "",
+            "class": "p5",
             "module": "constants"
         },
         {
-            "file": "src/var/constants.js",
-            "line": 49,
+            "file": "../src/var/constants.js",
+            "line": 54,
             "itemtype": "property",
             "name": "DEGREES",
             "type": "String",
             "final": 1,
-            "class": "",
+            "class": "p5",
             "module": "constants"
         },
         {
-            "file": "src/var/constants.js",
-            "line": 55,
+            "file": "../src/var/constants.js",
+            "line": 61,
             "itemtype": "property",
             "name": "RADIANS",
             "type": "String",
             "final": 1,
-            "class": "",
+            "class": "p5",
             "module": "constants"
         }
     ],
     "warnings": [
         {
             "message": "param name missing: {Invert}",
-            "line": " src/image/filters.js:228"
+            "line": " ../src/image/filters.js:228"
         },
         {
             "message": "Missing item type\nThe variable pmouseY always contains the vertical position of the mouse in the frame previous to the current frame.",
-            "line": " src/core/core.js:116"
+            "line": " ../src/core/core.js:116"
         },
         {
             "message": "Missing item type\nThis module defines the filters for use with image buffers.\n\nThis module is basically a collection of functions stored in an object\nas opposed to modules. The functions are destructive, modifying\nthe passed in canvas rather than creating a copy.\n\nGenerally speaking users of this module will use the Filters.apply method\non a canvas to create an effect.\n\nA number of functions are borrowed/adapted from http://www.html5rocks.com/en/tutorials/canvas/imagefilters/\nor the java processing implmentation.",
-            "line": " src/image/filters.js:5"
+            "line": " ../src/image/filters.js:5"
         },
         {
             "message": "Missing item type\nReturns the pixel buffer for a canvas",
-            "line": " src/image/filters.js:30"
+            "line": " ../src/image/filters.js:30"
         },
         {
             "message": "Missing item type\nReturns a 32 bit number containing ARGB data at ith pixel in the\n1D array containing pixels data.",
-            "line": " src/image/filters.js:47"
+            "line": " ../src/image/filters.js:47"
         },
         {
             "message": "Missing item type\nModifies pixels RGBA values to values contained in the data object.",
-            "line": " src/image/filters.js:65"
+            "line": " ../src/image/filters.js:65"
         },
         {
             "message": "Missing item type\nReturns the ImageData object for a canvas\nhttps://developer.mozilla.org/en-US/docs/Web/API/ImageData",
-            "line": " src/image/filters.js:84"
+            "line": " ../src/image/filters.js:84"
         },
         {
             "message": "Missing item type\nReturns a blank ImageData object.",
-            "line": " src/image/filters.js:102"
+            "line": " ../src/image/filters.js:102"
         },
         {
             "message": "Missing item type\nApplys a filter function to a canvas.\n\nThe difference between this and the actual filter functions defined below\nis that the filter functions generally modify the pixel buffer but do\nnot actually put that data back to the canvas (where it would actually\nupdate what is visible). By contrast this method does make the changes actually\nvisible in the canvas.\n\nThe apply method is the method that callers of this module would generally use.\nIt has been separated from the actual filters to support an advanced use case\nof creating a filter chain that executes without actually updating the canvas\nin between everystep.",
-            "line": " src/image/filters.js:118"
+            "line": " ../src/image/filters.js:118"
         },
         {
             "message": "Missing item type\nConverts the image to black and white pixels depending if they are above or\nbelow the threshold defined by the level parameter. The parameter must be\nbetween 0.0 (black) and 1.0 (white). If no level is specified, 0.5 is used.\n\nBorrowed from http://www.html5rocks.com/en/tutorials/canvas/imagefilters/",
-            "line": " src/image/filters.js:157"
+            "line": " ../src/image/filters.js:157"
         },
         {
             "message": "Missing item type\nConverts any colors in the image to grayscale equivalents. No parameter is used.\n\nBorrowed from http://www.html5rocks.com/en/tutorials/canvas/imagefilters/",
-            "line": " src/image/filters.js:192"
+            "line": " ../src/image/filters.js:192"
         },
         {
             "message": "Missing item type\nSets the alpha channel to entirely opaque. No parameter is used.",
-            "line": " src/image/filters.js:213"
+            "line": " ../src/image/filters.js:213"
         },
         {
             "message": "Missing item type\nSets each pixel to its inverse value. No parameter is used.",
-            "line": " src/image/filters.js:228"
+            "line": " ../src/image/filters.js:228"
         },
         {
             "message": "Missing item type\nLimits each channel of the image to the number of colors specified as\nthe parameter. The parameter can be set to values between 2 and 255, but\nresults are most noticeable in the lower ranges.\n\nAdapted from java based processing implementation",
-            "line": " src/image/filters.js:244"
+            "line": " ../src/image/filters.js:244"
         },
         {
             "message": "Missing item type\nreduces the bright areas in an image",
-            "line": " src/image/filters.js:276"
+            "line": " ../src/image/filters.js:276"
         },
         {
             "message": "Missing item type\nincreases the bright areas in an image",
-            "line": " src/image/filters.js:347"
+            "line": " ../src/image/filters.js:347"
         },
         {
             "message": "Missing item type\nThis module defines the PImage class and P5 methods for\ndrawing images to the main display canvas.",
-            "line": " src/image/image.js:10"
+            "line": " ../src/image/image.js:10"
         },
         {
             "message": "Missing item type\nCreate a new empty PImage object.",
-            "line": " src/image/image.js:26"
+            "line": " ../src/image/image.js:26"
         },
         {
             "message": "Missing item type\nUpdates the backing canvas for this image with the contents of\nthe [pixels] array.",
-            "line": " src/image/image.js:169"
+            "line": " ../src/image/image.js:171"
         },
         {
             "message": "Missing item type\nGet a region of pixels from an image.\n\nIf no params are passed, those whole image is returned,\nif x and y are the only params passed a single pixel is extracted\nif all params are passed a rectangle region is extracted and a Pimage is\nreturned.\n\nReturns undefined if the region is outside the bounds of the image",
-            "line": " src/image/image.js:207"
+            "line": " ../src/image/image.js:210"
         },
         {
             "message": "Missing item type\nSet the color of a single pixel or write an image into\nthis PImage.\n\nNote that for a large number of pixels this will\nbe slower than directly manipulating the pixels array\nand then calling updatePixels()\n\nTODO: Should me make the update operation toggleable?",
-            "line": " src/image/image.js:263"
+            "line": " ../src/image/image.js:267"
         },
         {
             "message": "Missing item type\nResize this PImage.",
-            "line": " src/image/image.js:292"
+            "line": " ../src/image/image.js:297"
         },
         {
             "message": "Missing item type\nCopies a region of pixels from one image to another. If no\nsrcImage is specified this is used as the source. If the source\nand destination regions aren't the same size, it will\nautomatically resize source pixels to fit the specified\ntarget region.",
-            "line": " src/image/image.js:334"
+            "line": " ../src/image/image.js:340"
         },
         {
             "message": "Missing item type\nMasks part of an image from displaying by loading another\nimage and using it's alpha channel as an alpha channel for\nthis image.",
-            "line": " src/image/image.js:384"
+            "line": " ../src/image/image.js:391"
         },
         {
             "message": "Missing item type\nApplies an image filter to a PImage",
-            "line": " src/image/image.js:413"
+            "line": " ../src/image/image.js:421"
         },
         {
             "message": "Missing item type\nCopies a region of pixels from one image to another, using a specified\nblend mode to do the operation.",
-            "line": " src/image/image.js:424"
+            "line": " ../src/image/image.js:433"
         },
         {
             "message": "Missing item type\nSaves the image to a file and forces the browser to download it.\nSupports png and jpg.",
-            "line": " src/image/image.js:458"
+            "line": " ../src/image/image.js:468"
         },
         {
             "message": "Missing item type\nReturns the Perlin noise value at specified coordinates. Perlin noise is\na random sequence generator producing a more natural ordered, harmonic\nsuccession of numbers compared to the standard <b>random()</b> function.\nIt was invented by Ken Perlin in the 1980s and been used since in\ngraphical applications to produce procedural textures, natural motion,\nshapes, terrains etc.<br /><br /> The main difference to the\n<b>random()</b> function is that Perlin noise is defined in an infinite\nn-dimensional space where each pair of coordinates corresponds to a\nfixed semi-random value (fixed only for the lifespan of the program).\nThe resulting value will always be between 0.0 and 1.0. Processing can\ncompute 1D, 2D and 3D noise, depending on the number of coordinates\ngiven. The noise value can be animated by moving through the noise space\nas demonstrated in the example above. The 2nd and 3rd dimension can also\nbe interpreted as time.<br /><br />The actual noise is structured\nsimilar to an audio signal, in respect to the function's use of\nfrequencies. Similar to the concept of harmonics in physics, perlin\nnoise is computed over several octaves which are added together for the\nfinal result. <br /><br />Another way to adjust the character of the\nresulting sequence is the scale of the input coordinates. As the\nfunction works within an infinite space the value of the coordinates\ndoesn't matter as such, only the distance between successive coordinates\ndoes (eg. when using <b>noise()</b> within a loop). As a general rule\nthe smaller the difference between coordinates, the smoother the\nresulting noise sequence will be. Steps of 0.005-0.03 work best for most\napplications, but this will differ depending on use.",
-            "line": " src/math/noise.js:48"
+            "line": " ../src/math/noise.js:48"
         },
         {
             "message": "Missing item type\nAdjusts the character and level of detail produced by the Perlin noise\n function. Similar to harmonics in physics, noise is computed over\n several octaves. Lower octaves contribute more to the output signal and\n as such define the overal intensity of the noise, whereas higher octaves\n create finer grained details in the noise sequence. By default, noise is\n computed over 4 octaves with each octave contributing exactly half than\n its predecessor, starting at 50% strength for the 1st octave. This\n falloff amount can be changed by adding an additional function\n parameter. Eg. a falloff factor of 0.75 means each octave will now have\n 75% impact (25% less) of the previous lower octave. Any value between\n 0.0 and 1.0 is valid, however note that values greater than 0.5 might\n result in greater than 1.0 values returned by <b>noise()</b>.<br /><br\n />By changing these parameters, the signal created by the <b>noise()</b>\n function can be adapted to fit very specific needs and characteristics.",
-            "line": " src/math/noise.js:163"
+            "line": " ../src/math/noise.js:163"
         },
         {
             "message": "Missing item type\nNOT IMPLEMENTED YET!\n Sets the seed value for <b>noise()</b>. By default, <b>noise()</b>\n produces different results each time the program is run. Set the\n <b>value</b> parameter to a constant to return the same pseudo-random\n numbers each time the software is run.",
-            "line": " src/math/noise.js:188"
+            "line": " ../src/math/noise.js:188"
         },
         {
             "message": "Missing item type\nMake a new 2D unit vector from an angle",
-            "line": " src/math/pvector.js:203"
+            "line": " ../src/math/pvector.js:203"
         },
         {
             "message": "Missing item type\nMake a new 2D unit vector from a random angle",
-            "line": " src/math/pvector.js:213"
+            "line": " ../src/math/pvector.js:213"
         },
         {
             "message": "Missing item type\nMake a new random 3D unit vector.",
-            "line": " src/math/pvector.js:223"
+            "line": " ../src/math/pvector.js:223"
         },
         {
             "message": "Missing item type\nReturn a random number.\n\nTakes either 0, 1 or 2 arguments.\nIf no argument is given, returns a random number between 0 and 1.\nIf one argument is given, returns a random number between 0 and the number.\nIf two arguments are given, returns a random number between them, inclusive.",
-            "line": " src/math/random.js:18"
+            "line": " ../src/math/random.js:18"
         },
         {
             "message": "Missing item type\nProvides methods to draw 2d primitives.",
-            "line": " src/shape/2d_primitives.js:1"
+            "line": " ../src/shape/2d_primitives.js:1"
         },
         {
             "message": "Missing item type\nDraws a point, a coordinate in space at the dimension of one pixel. The first parameter is the horizontal value for the point, the second value is the vertical value for the point, and the optional third value is the depth value. Drawing this shape in 3D with the z parameter requires the P3D parameter in combination with size() as shown in the above example.",
-            "line": " src/shape/2d_primitives.js:108"
+            "line": " ../src/shape/2d_primitives.js:128"
         },
         {
             "message": "Missing item type\nSets the resolution at which curves display.\n\nThe default value is 20.\n\nReturns void",
-            "line": " src/shape/curves.js:45"
+            "line": " ../src/shape/curves.js:45"
         },
         {
             "message": "Missing item type\nCalculate a point on the Curve\n\nEvaluates the Bezier at point t for points a, b, c, d.\nThe parameter t varies between 0 and 1, a and d are points\non the curve, and b and c are the control points.\nThis can be done once with the x coordinates and a second time\nwith the y coordinates to get the location of a curve at t.\n\nReturns float",
-            "line": " src/shape/curves.js:60"
+            "line": " ../src/shape/curves.js:60"
         },
         {
             "message": "Missing item type\nCalculates the tangent of a point on a curve\n\nEvaluates the tangent at point t for points a, b, c, d.\nThe parameter t varies between 0 and 1, a and d are points\non the curve, and b and c are the control points\n\nReturns float",
-            "line": " src/shape/curves.js:88"
+            "line": " ../src/shape/curves.js:88"
         }
     ]
 }
