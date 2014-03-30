@@ -29,20 +29,32 @@ define([
     },
     render: function(item) {
       if (item) {
-        var itemHtml,
+        var itemHtml = '',
                 cleanItem = this.clean(item),
-                isClass = item.hasOwnProperty('itemtype') ? false : true;
+                isClass = item.hasOwnProperty('itemtype') ? 0 : 1,
+                collectionName = isClass ? 'Class' : this.capitalizeFirst(cleanItem.itemtype),
+                isConstant = !isClass ? cleanItem.final : 0;
         
-        console.log(cleanItem);
+        console.log(cleanItem.final);
 
+        // Set the item header (title)
+        itemHtml = this.tpl({
+          item: cleanItem,
+          name: cleanItem.name,
+          collectionName: collectionName,
+          isClass: isClass,
+          isConstant: isConstant
+        });
+
+        // Set item contents
         if (isClass) {
-          itemHtml = this.classTpl(cleanItem);
+          itemHtml += this.classTpl(cleanItem);
         } else if (item.itemtype === 'method') {
-          itemHtml = this.methodTpl(cleanItem);
+          itemHtml += this.methodTpl(cleanItem);
         } else if (item.itemtype === 'event') {
-          itemHtml = this.eventTpl(cleanItem);
+          itemHtml += this.eventTpl(cleanItem);
         } else if (item.itemtype === 'property') {
-          itemHtml = this.propertyTpl(cleanItem);
+          itemHtml += this.propertyTpl(cleanItem);
         }
 
         // Insert the view in the dom
@@ -95,6 +107,14 @@ define([
       this.$el.show();
 
       return this;
+    },
+    /**
+     * Helper method to capitalize the first letter of a string
+     * @param {string} str 
+     * @returns {string} Returns the string.
+     */
+    capitalizeFirst: function(str) {
+      return str.substr(0, 1).toUpperCase() + str.substr(1);
     }
   });
 
