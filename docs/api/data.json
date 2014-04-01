@@ -1267,7 +1267,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 19,
+            "line": 20,
             "description": "The x component of the vector",
             "itemtype": "property",
             "name": "x",
@@ -1277,7 +1277,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 25,
+            "line": 26,
             "description": "The y component of the vector",
             "itemtype": "property",
             "name": "y",
@@ -1287,7 +1287,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 31,
+            "line": 32,
             "description": "The z component of the vector",
             "itemtype": "property",
             "name": "z",
@@ -1297,7 +1297,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 39,
+            "line": 40,
             "description": "Sets the x, y, and z component of the vector using three separate variables, the data from a PVector, or the values from a float array.",
             "itemtype": "method",
             "name": "set",
@@ -1330,7 +1330,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 55,
+            "line": 56,
             "description": "Gets a copy of the vector, returns a PVector object.",
             "itemtype": "method",
             "name": "get",
@@ -1343,7 +1343,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 64,
+            "line": 65,
             "description": "Adds x, y, and z components to a vector, adds one vector to another, or adds two independent vectors together. The version of the method that adds two vectors together is a static method and returns a PVector, the others have no return value -- they act directly on the vector. See the examples for more context.",
             "itemtype": "method",
             "name": "add",
@@ -1374,7 +1374,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 83,
+            "line": 84,
             "description": "Subtracts x, y, and z components from a vector, subtracts one vector from another, or subtracts two independent vectors. The version of the method that substracts two vectors is a static method and returns a PVector, the others have no return value -- they act directly on the vector. See the examples for more context.",
             "itemtype": "method",
             "name": "sub",
@@ -1405,7 +1405,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 125,
+            "line": 126,
             "description": "Calculates the dot product of two vectors.",
             "itemtype": "method",
             "name": "dot",
@@ -1435,7 +1435,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 203,
+            "line": 204,
             "description": "Make a new 2D unit vector from an angle",
             "params": [
                 {
@@ -1453,7 +1453,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 213,
+            "line": 214,
             "description": "Make a new 2D unit vector from a random angle",
             "return": {
                 "description": "The new PVector object.",
@@ -1464,7 +1464,7 @@
         },
         {
             "file": "../src/math/pvector.js",
-            "line": 223,
+            "line": 224,
             "description": "Make a new random 3D unit vector.",
             "return": {
                 "description": "The new PVector object.",
@@ -1981,15 +1981,15 @@
         },
         {
             "message": "Missing item type\nMake a new 2D unit vector from an angle",
-            "line": " ../src/math/pvector.js:203"
+            "line": " ../src/math/pvector.js:204"
         },
         {
             "message": "Missing item type\nMake a new 2D unit vector from a random angle",
-            "line": " ../src/math/pvector.js:213"
+            "line": " ../src/math/pvector.js:214"
         },
         {
             "message": "Missing item type\nMake a new random 3D unit vector.",
-            "line": " ../src/math/pvector.js:223"
+            "line": " ../src/math/pvector.js:224"
         },
         {
             "message": "Missing item type\nReturn a random number.\n\nTakes either 0, 1 or 2 arguments.\nIf no argument is given, returns a random number between 0 and 1.\nIf one argument is given, returns a random number between 0 and the number.\nIf two arguments are given, returns a random number between them, inclusive.",

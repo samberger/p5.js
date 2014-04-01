@@ -16,6 +16,7 @@ define(function (require) {
    * @param {Number} [z] The z component of the vector
    */
   function PVector(x, y, z) {
+    
     /**
      * The x component of the vector
      * @property x

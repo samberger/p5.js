@@ -15,22 +15,30 @@ define([
      * Init.
      */
     init: function() {
+      var self = this;
       this.listTpl = _.template(listTpl);
       this.listItemTpl = _.template(listItemTpl);
+
+
+      // Start events
+      $(document).on('click', '#sort-ab', function() {
+        var $list = self.$el.find('#collection-list');
+        $list.find('li').sort(self.sortAZ).appendTo($list);
+      });
 
       return this;
     },
     /**
      * Render the list.
      */
-    render: function(items, listGroup) {
-      if (items && listGroup) {
+    render: function(items, listCollection) {
+      if (items && listCollection) {
         var self = this;
 
         // Render the html for the <li> items
         var listItemsHtml = "";
         _.each(items, function(item, i) {
-          var isClass = listGroup === 'classes';
+          var isClass = listCollection === 'classes';
           var item = items[i];
           var name = item.name;
           var hash = '#get/';
@@ -47,13 +55,14 @@ define([
 
         // Put the <li> items html into the list <ul>
         var listHtml = self.listTpl({
-          'title': self.capitalizeFirst(listGroup),
+          'title': self.capitalizeFirst(listCollection),
           'listItems': listItemsHtml,
-          'listGroup': listGroup
+          'listCollection': listCollection
         });
 
         // Render the view
         this.$el.html(listHtml);
+
       }
 
       return this;
@@ -80,6 +89,15 @@ define([
      */
     capitalizeFirst: function(str) {
       return str.substr(0, 1).toUpperCase() + str.substr(1);
+    },
+    /**
+     * Sort function (for the Array.prototype.sort() native method): from A to Z.
+     * @param {string} a
+     * @param {string} b
+     * @returns {Array} Returns an array with elements sorted from A to Z.
+     */
+    sortAZ: function(a, b) {
+      return a.innerHTML.toLowerCase() > b.innerHTML.toLowerCase() ? 1 : -1;
     }
 
   });
