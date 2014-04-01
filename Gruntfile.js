@@ -21,33 +21,7 @@ module.exports = function (grunt) {
     },
     watch: {
       files: ['src/**/*.js'],
-      tasks: ['jshint', 'requirejs', 'jsdoc'],
-      docs: {
-        files: ['docs/yuidoc-p5-theme/assets/js/**/*.js', 'docs/yuidoc-p5-theme/assets/css/*.css'],
-        tasks: ['yuidoc'],
-      }
-    },
-//    jsdoc: {
-//      dist: {
-//        src: ['src/**/*.js'],
-//        options: {
-//          destination: 'docs/api'
-//        }
-//      }
-//    },
-    yuidoc: {
-      compile: {
-        name: '<%= pkg.name %>',
-        description: '<%= pkg.description %>',
-        version: '<%= pkg.version %>',
-        url: '<%= pkg.homepage %>',
-        options: {
-          paths: 'src/',
-          themedir: 'docs/yuidoc-p5-theme/',
-          helpers: ["docs/yuidoc-p5-theme/helpers/helpers.js"],
-          outdir: 'docs/api/'
-        }
-      }
+      tasks: ['jshint', 'requirejs']
     },
     mocha: {
       test: {
@@ -140,7 +114,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-mocha');
-//  grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-contrib-yuidoc');
   
   grunt.registerTask('test', ['jshint', 'qunit']);

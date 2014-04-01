@@ -2,7 +2,7 @@ var require = {
   baseUrl: "assets/js",
   paths: {
     //'jquery': '//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min',
-    'jquery': 'vendor/jquery/jquery-1.11.0.min',
+    'jquery': 'vendor/jquery/jquery-1.11.0',
     'underscore': 'vendor/underscore-amd/underscore.min',
     'backbone': 'vendor/backbone-amd/backbone.min',
     // Require plugins
