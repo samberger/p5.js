@@ -11,3 +11,7 @@ nbproject
 /docs/api/assets/js/apidocs.js
 /docs/api/assets/js/api-search.js
 /docs/api/assets/js/yui-prettify.js
+/docs/api/modules/
+/docs/api/files/
+/docs/api/classes/
+/docs/api/api.js
