@@ -62,8 +62,8 @@ define([
     typeaheadEvents: function($input) {
       $input.on('typeahead:selected', function(e, item, datasetName) {
         var selectedItem = App.allItems[item.idx];
-        //console.log(selectedItem);
-        App.itemView.show(selectedItem);
+        var hash = App.router.getHash(selectedItem).replace('#', '');
+        App.router.navigate(hash, {'trigger': true});
       });
     },
     /**

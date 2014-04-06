@@ -1,6 +1,6 @@
 /**
  * Provides methods to draw 2d primitives.
- * @for p5
+ * @module 2d_primitives
  */
 define(function(require) {
 
@@ -15,8 +15,7 @@ define(function(require) {
    *
    * If a,b,c,d,start and stop are the only params provided, draws an
    * open pie.
-   * If mode is provided draws the arc either open, chord or pie, dependant
-   * on the variable provided.
+   * If mode is provided draws the arc either open, chord or pie, dependant on the variable provided.
    * 
    * @method arc
    * @param  {Number} a X-coordinate of the arc's ellipse
@@ -25,7 +24,7 @@ define(function(require) {
    * @param  {Number} d Height of the arc's ellipse by default
    * @param  {Number} start Angle to start the arc, specified in radians
    * @param  {Number} stop Angle to stop the arc, specified in radians
-   * @param  {Mode} [mode] Optional parameter to determine the way of drawing the arc
+   * @param  {String} [mode] Optional parameter to determine the way of drawing the arc
    * @return {Object} Returns the p5 object.
    * 
    * @example <div><img src="http://processing.org/reference/images/arc_.png">

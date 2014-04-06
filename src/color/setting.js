@@ -1,3 +1,6 @@
+/**
+ * @module color
+ */
 define(function(require) {
 
   'use strict';

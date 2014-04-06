@@ -1,38 +1,72 @@
 #item {
 
-  .param-description,
-  .param-name {
-    display: inline;
-    margin-right: 20px;
-  }
-
+  .events,
   .method {
     .signature {
       padding-top: 20px;
       padding-bottom: 20px;
       .name {
+        font-size: 15px;
         code {
-          .pln {
-            color: #0096FF;
+          .word-new {
+            .kwd {
+              color: #0096FF;
+            }
+          }
+          .word-name {
+            .typ,
+            .pln {
+              color: #0096FF;
+            }
           }
         }
       } 
     }
 
-    .params-list,
-    .args-list {
-      .param,
-      .arg {
+    .args {
+      display: inline;
+      .paren {
+        margin: 0 6px;
+        font-size: 18px;
+      }
+    }
+
+    ul.params-list,
+    ul.args-list {
+      li.param,
+      li.arg {
         code {
-          &.optional {
-            .pln {
-              color: $codeEasyColor; // green
-            }
-          }
+          font-size: 15px;
+        }
+        .param-type,
+        .param-name,
+        .flag {
+          display: inline-block;
+          margin-right: 20px;
+        }
+        .param-name {
+          min-width: 100px;
+          font-weight: bold;
+        }
+        .param-type {
+          text-align: center;
+        }
+        .flag {
+          min-width: 60px;
+          text-align: center;
+        }
+        .param-description {
+          display: block;
+          margin: 10px 0;
+        }
+        .optional {
           .pln {
-            font-weight: bold;
-            color: $codeAttentionColor; // orange
+            color: $codeEasyColor; // green
           }
+        }
+        .pln {
+          font-weight: bold;
+          color: $codeAttentionColor; // orange
         }
       }
     }
@@ -68,6 +102,7 @@
   .meta {
     font-size: $font-size-small;
     color: #666;
+    margin: 20px 0;
   }
 
   .description,
@@ -104,8 +139,8 @@
   .box {
     border: 1px solid;
     border-radius: 3px;
-    margin: 1em 0;
-    padding: 0 1em;
+    margin: 13px 0;
+    padding: 0 13px;
   }
 
   /* A flag is a compact, capsule-like indicator of some kind. It's used to
@@ -116,8 +151,11 @@
     border-radius: 3px;
     color: #fff;
     font-size: 11px;
-    margin: 0 0.5em;
+    margin: 0 6px;
     padding: 2px 4px 1px;
+    font-weight: normal;
+    min-width: 60px;
+    text-align: center;
   }
 
   /* Class/module metadata such as "Uses", "Extends", "Defined in", etc. */
@@ -138,7 +176,7 @@
     border: 1px solid #fd7775;
   }
 
-  .box.deprecated p { margin: 0.5em 0; }
+  .box.deprecated p { margin: 6px 0; }
   .flag.deprecated { color: #333; }
 
   /* Module/Class intro description. */
@@ -179,17 +217,17 @@
   kbd .cmd { font-family: Monaco, Helvetica; }
 
   /* -- Generic Item Index styles --------------------------------------------- */
-  .index { margin: 1.5em 0 3em; }
+  .index { margin: 19px 0 39px; }
 
   .index h3 {
     border-bottom: 1px solid #efefef;
     color: #333;
     font-size: 13px;
-    margin: 2em 0 0.6em;
+    margin: 26px 0 8px;
     padding-bottom: 2px;
   }
 
-  .index .no-visible-items { margin-top: 2em; }
+  .index .no-visible-items { margin-top: 26px; }
 
   .index-list {
     border-color: #efefef;
@@ -229,15 +267,12 @@
     border: none;
     color: #afafaf;
     display: inline;
-    margin: 0 0 0 0.2em;
+    margin: 0 0 0 4px;
     padding: 0;
   }
 
   /* -- Generic API item styles ----------------------------------------------- */
-  .args {
-    display: inline;
-    margin: 0 0.5em;
-  }
+
 
   .flag.chainable { background: #46ca3b; }
   .flag.protected { background: #9b86fc; }
@@ -245,11 +280,11 @@
   .flag.async { background: #356de4; }
   .flag.required { background: #e60923; }
 
-/*  .item {
-    border-bottom: 1px solid #efefef;
-    margin: 20px 0 30px;
-    padding-bottom: 30px;
-  }*/
+  /*  .item {
+      border-bottom: 1px solid #efefef;
+      margin: 20px 0 30px;
+      padding-bottom: 30px;
+    }*/
 
   .item h4,
   .item h5,
@@ -298,11 +333,10 @@
   }
 
   .param .type {
-    margin: 0 0 0 0.5em;
-    *margin-left: 0.5em;
+    margin: 0 0 0 6px;
+    *margin-left: 6px;
   }
 
-  .param-name { font-weight: bold; }
 
   /* -- Item "Emits" block ---------------------------------------------------- */
   .item .emits {
@@ -348,7 +382,7 @@
   /* -- Submodule List -------------------------------------------------------- */
   .module-submodule-description {
     font-size: 12px;
-    margin: 0.3em 0 1em;
+    margin: 4px 0 13px;
   }
 
   .module-submodule-description p:first-child { margin-top: 0; }

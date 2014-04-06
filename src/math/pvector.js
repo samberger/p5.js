@@ -67,9 +67,9 @@ define(function (require) {
    * 
    * @method add
    * @chainable
-   * @param {Number} x The x component of the vector to be added.
-   * @param {Number} y The y component of the vector to be added.
-   * @param {Number} z The z component of the vector to be added.
+   * @param {Number} [x] The x component of the vector to be added.
+   * @param {Number} [y] The y component of the vector to be added.
+   * @param {Number} [z] The z component of the vector to be added.
    * @return {PVector} The PVector object.
    */
   PVector.prototype.add = function (x, y, z) {

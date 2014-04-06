@@ -119,11 +119,11 @@ define([
       // Get collection from the hash if not provided
       if (!collection)
         var collection = location.hash.replace('#', '');
-      
+
       // Make sure collection is valid
       if (App.collections.indexOf(collection) < 0)
         return;
-      
+
       this.init(function() {
         App.menuView.update(collection);
         App.listView.show(collection);
@@ -146,6 +146,25 @@ define([
       this.init(function() {
         App.fileView.show(filepath, line);
       });
+    },
+    /**
+     * Create an hash/url for the item.
+     * @param {Object} item A class, method, property or event object.
+     * @returns {String} The hash string, including the '#'.
+     */
+    getHash: function(item) {
+      if (!item.hash) {
+        var hash = '#get/';
+        var isClass = item.hasOwnProperty('classitems');
+        // Create hash for links
+        if (isClass) {
+          hash += item.name;
+        } else {
+          hash += item.class + '/' + item.name;
+        }
+        item.hash = hash;
+      }
+      return item.hash;
     }
   });
 

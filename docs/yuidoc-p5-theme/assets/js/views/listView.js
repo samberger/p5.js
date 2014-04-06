@@ -3,28 +3,19 @@ define([
   'backbone',
   'App',
   // Templates
-  'text!tpl/listItem.html',
   'text!tpl/list.html'
-], function(_, Backbone, App, listItemTpl, listTpl) {
+], function(_, Backbone, App, listTpl) {
 
   var listView = Backbone.View.extend({
     el: '#list',
     events: {
+      //'click #sort-az': 'sortAZ'
     },
     /**
      * Init.
      */
     init: function() {
-      var self = this;
       this.listTpl = _.template(listTpl);
-      this.listItemTpl = _.template(listItemTpl);
-
-
-      // Start events
-      $(document).on('click', '#sort-ab', function() {
-        var $list = self.$el.find('#collection-list');
-        $list.find('li').sort(self.sortAZ).appendTo($list);
-      });
 
       return this;
     },
@@ -35,34 +26,41 @@ define([
       if (items && listCollection) {
         var self = this;
 
-        // Render the html for the <li> items
-        var listItemsHtml = "";
+        // Render items and group them by module
+        // module === group
+        this.groups = {};
         _.each(items, function(item, i) {
-          var isClass = listCollection === 'classes';
           var item = items[i];
-          var name = item.name;
-          var hash = '#get/';
-          if (isClass) {
-            hash += name;
-          } else {
-            hash += item.class + '/' + name;
+          var group = item.module || '_';
+          var hash = App.router.getHash(item);
+          
+          // Create a groups list
+          if (!self.groups[group]) {
+            self.groups[group] = {
+              name: group.replace('_', '&nbsp;'),
+              items: []
+            };
           }
-          listItemsHtml += self.listItemTpl({
-            'name': item.name,
-            'hash': hash
-          });
+          self.groups[group].items.push(item);
+        });
+
+        // Sort groups by name A-Z
+        _.sortBy(self.groups, this.sortByName);
+
+        // Sort items by name A-Z
+        _.each(self.groups, function(group) {
+          _.sortBy(group.items, this.sortByName);
         });
 
         // Put the <li> items html into the list <ul>
         var listHtml = self.listTpl({
           'title': self.capitalizeFirst(listCollection),
-          'listItems': listItemsHtml,
+          'groups': self.groups,
           'listCollection': listCollection
         });
 
         // Render the view
         this.$el.html(listHtml);
-
       }
 
       return this;
@@ -98,6 +96,10 @@ define([
      */
     sortAZ: function(a, b) {
       return a.innerHTML.toLowerCase() > b.innerHTML.toLowerCase() ? 1 : -1;
+    },
+    
+    sortByName: function(a,b) {
+       return a.name > b.name ? 1 : -1;
     }
 
   });

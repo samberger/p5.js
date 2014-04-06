@@ -50,7 +50,7 @@ require([
       }
     });
 
-    //console.log(App.methods);
+    //console.log(App.data);
 
     // Get classes
     _.each(classes, function(el, idx, array) {

@@ -6,31 +6,33 @@
     <p>{{{description}}}</p>
   </div>
 
-
-  <div class="meta">Class: <strong><a href='#get/{{class}}'>{{class}}</a></strong> | File: <strong><a href='#file/{{urlencodedfile}}/{{line}}'>{{file}}:{{line}}</a></strong></div>
-
-
   <div class="signature">
 
-    <h3 class="name"><code>{{name}}</code></h3>
-
-    {{#if params}}
+    <h3 class="name">
+      <code>
+        {{#if isConstructor}}<span class="word-new">new</span>{{/if}}
+        <span class="word-name">{{name}}</span>
+      </code>
+    </h3>
     <div class="args">
+      {{#if params}}
       <span class="paren">(</span><ul class="args-list inline commas">
         {{#params}}
         <li class="arg">
           {{#if optional}}
-          <code class="optional">[{{name}}{{#if optdefault}}={{optdefault}}{{/if}}]</code>
+          <code class="optional">[{{name}}{{#if optdefault}}={{optdefault}}{{/if}}]</code> 
           {{else}}
           <code>{{name}}</code>
           {{/if}}
         </li>
         {{/params}}
       </ul><span class="paren">)</span>
+
+      {{else}}
+      <span class="paren">(</span>
+      <span class="paren">)</span>
+      {{/if}}
     </div>
-    {{else}}
-    <span class="paren">()</span>
-    {{/if}}
 
   </div>
 
@@ -57,51 +59,49 @@
   {{/if}}
 
   {{#if chainable}}
-  <span class="flag chainable">chainable</span>
+  <span class="label label-success chainable">chainable</span>
   {{/if}}
 
   {{#if async}}
   <span class="flag async">async</span>
   {{/if}}
 
-  <div class="meta">
-    {{#if overwritten_from}}
-    <p>Inherited from
-      <a href="#">
-        {{overwritten_from/class}}
-      </a>
-      {{#if foundAt}}
-      but overwritten in
+  <!--  <div class="meta">
+      {{#if overwritten_from}}
+      <p>Inherited from
+        <a href="#">
+          {{overwritten_from/class}}
+        </a>
+        {{#if foundAt}}
+        but overwritten in
+        {{/if}}
+        {{else}}
+        {{#if extended_from}}
+      <p>Inherited from
+        <a href="#">{{extended_from}}</a>:
+        {{else}}
+        {{#providedBy}}
+      <p>Provided by the <a href="../modules/{{.}}.html">{{.}}</a> module.</p>
+      {{/providedBy}}
+      <p>
+        {{#if foundAt}}
+        Defined in
+        {{/if}}
+        {{/if}}
+        {{/if}}
+        {{#if foundAt}}
+        <a href="{{foundAt}}">`{{{file}}}:{{{line}}}`</a>
+        {{/if}}
+      </p>
+  
+      {{#if deprecationMessage}}
+      <p>Deprecated: {{deprecationMessage}}</p>
       {{/if}}
-      {{else}}
-      {{#if extended_from}}
-    <p>Inherited from
-      <a href="#">{{extended_from}}</a>:
-      {{else}}
-      {{#providedBy}}
-    <p>Provided by the <a href="../modules/{{.}}.html">{{.}}</a> module.</p>
-    {{/providedBy}}
-    <p>
-      {{#if foundAt}}
-      Defined in
+  
+      {{#if since}}
+      <p>Available since {{since}}</p>
       {{/if}}
-      {{/if}}
-      {{/if}}
-      {{#if foundAt}}
-      <a href="{{foundAt}}">`{{{file}}}:{{{line}}}`</a>
-      {{/if}}
-    </p>
-
-
-    {{#if deprecationMessage}}
-    <p>Deprecated: {{deprecationMessage}}</p>
-    {{/if}}
-
-    {{#if since}}
-    <p>Available since {{since}}</p>
-    {{/if}}
-  </div>
-
+    </div>-->
 
 
   {{#if params}}
@@ -111,13 +111,18 @@
     <ul class="params-list">
       {{#params}}
       <li class="param">
+
         {{#if optional}}
         <code class="param-name optional">[{{name}}{{#if optdefault}}={{optdefault}}{{/if}}]</code>
 
-        <span class="flag optional" title="This parameter is optional.">optional</span>
+        <span class="label label-default optional" title="This parameter is optional.">optional</span>
         {{else}}
         <code class="param-name">{{name}}</code>
 
+        {{/if}}
+
+        {{#if type}}
+          <span class="param-type label label-info">{{type}}</span> 
         {{/if}}
 
         {{#if multiple}}
@@ -183,7 +188,7 @@
       {{#if description}}
       {{#if type}}
       [ <strong>{{{type}}}</strong> ]
-      
+
       {{/if}}
       {{{description}}}
       {{else}}
@@ -204,4 +209,21 @@
     </div>
   </div>
   {{/example}}
+
+
+
+
+
+  <div class="meta">
+    {{#if class}}
+    Class: 
+    <strong><a href='#get/{{class}}'>{{class}}</a></strong>
+    |
+    {{/if}}
+    File: 
+    <strong><a href='#file/{{urlencodedfile}}/{{line}}'>{{file}}:{{line}}</a></strong> 
+  </div>
+
+
+
 </div>

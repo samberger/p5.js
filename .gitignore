@@ -6,3 +6,8 @@ nbproject
 /docs/yuidoc-p5-theme-src/sass/.sass-cache/
 /docs/node_modules/
 /docs/.sass-cache/
+/docs/api/assets/js/api-list.js
+/docs/api/assets/js/api-filter.js
+/docs/api/assets/js/apidocs.js
+/docs/api/assets/js/api-search.js
+/docs/api/assets/js/yui-prettify.js

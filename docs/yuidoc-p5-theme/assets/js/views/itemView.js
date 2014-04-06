@@ -6,24 +6,26 @@ define([
   'handlebars',
   // Templates
   'text!tpl/item.html',
+  'text!tpl/class.html',
   // Handlebars templates
   'text!tpl/method.handlebars',
   'text!tpl/event.handlebars',
   'text!tpl/property.handlebars',
-  'text!tpl/class.handlebars',
+  //'text!tpl/class.handlebars',
   // Tools
   'prettify'
-], function(_, Backbone, App, Handlebars, itemTpl, methodTpl, eventTpl, propertyTpl, classTpl) {
+], function(_, Backbone, App, Handlebars, itemTpl, classTpl, methodTpl, eventTpl, propertyTpl) {
 
   var itemView = Backbone.View.extend({
     el: '#item',
     init: function() {
       this.tpl = _.template(itemTpl);
+      this.classTpl = _.template(classTpl);
      
       this.methodTpl = Handlebars.compile(methodTpl);
       this.eventTpl = Handlebars.compile(eventTpl);
       this.propertyTpl = Handlebars.compile(propertyTpl);
-      this.classTpl = Handlebars.compile(classTpl);
+      //this.classTpl = Handlebars.compile(classTpl);
 
       return this;
     },
@@ -32,10 +34,9 @@ define([
         var itemHtml = '',
                 cleanItem = this.clean(item),
                 isClass = item.hasOwnProperty('itemtype') ? 0 : 1,
-                collectionName = isClass ? 'Class' : this.capitalizeFirst(cleanItem.itemtype),
-                isConstant = !isClass ? cleanItem.final : 0;
-        
-        console.log(cleanItem.final);
+                collectionName = isClass ? 'Constructor' : this.capitalizeFirst(cleanItem.itemtype),
+                isConstant = !isClass ? cleanItem.final : 0,
+                isConstructor = cleanItem.is_constructor;
 
         // Set the item header (title)
         itemHtml = this.tpl({
@@ -43,11 +44,16 @@ define([
           name: cleanItem.name,
           collectionName: collectionName,
           isClass: isClass,
-          isConstant: isConstant
+          isConstant: isConstant,
         });
 
         // Set item contents
         if (isClass) {
+          if (isConstructor) {
+            cleanItem.isConstructor = isConstructor;
+            var constructor = this.methodTpl(cleanItem);
+            cleanItem.constructor = constructor;
+          }
           itemHtml += this.classTpl(cleanItem);
         } else if (item.itemtype === 'method') {
           itemHtml += this.methodTpl(cleanItem);
@@ -78,8 +84,6 @@ define([
       if (cleanItem.hasOwnProperty('file')) {
         cleanItem.urlencodedfile = encodeURIComponent(item.file);
       }
-      
-      console.log(cleanItem.file);
       return cleanItem;
     },
     /**

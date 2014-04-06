@@ -29,7 +29,7 @@ define([
      * @param {string} el The name of the current route.
      */
     update: function(menuItem) {
-      console.log(menuItem);
+      //console.log(menuItem);
       this.$menuItems.removeClass('active');
       this.$menuItems.find('a[href=#'+menuItem+']').parent().addClass('active');
     }
