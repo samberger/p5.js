@@ -5,284 +5,287 @@
  * @requires core
  * @requires constants
  */
-define(function (require) {
 
-  'use strict';
+'use strict';
 
-  var p5 = require('core');
-  var constants = require('constants');
+var p5 = require('../core/main');
 
-  p5.prototype._textLeading = 15;
-  p5.prototype._textFont = 'sans-serif';
-  p5.prototype._textSize = 12;
-  p5.prototype._textStyle = constants.NORMAL;
-  p5.prototype._textAscent = null;
-  p5.prototype._textDescent = null;
+/**
+ * Sets the current alignment for drawing text. Accepts two
+ * arguments: horizAlign (LEFT, CENTER, or RIGHT) and
+ * vertAlign (TOP, BOTTOM, CENTER, or BASELINE).
+ *
+ * The horizAlign parameter is in reference to the x value
+ * of the <a href="#/p5/text">text()</a> function, while the vertAlign parameter is
+ * in reference to the y value.
+ *
+ * So if you write textAlign(LEFT), you are aligning the left
+ * edge of your text to the x value you give in <a href="#/p5/text">text()</a>. If you
+ * write textAlign(RIGHT, TOP), you are aligning the right edge
+ * of your text to the x value and the top of edge of the text
+ * to the y value.
+ *
+ * @method textAlign
+ * @param {Constant} horizAlign horizontal alignment, either LEFT,
+ *                            CENTER, or RIGHT
+ * @param {Constant} [vertAlign] vertical alignment, either TOP,
+ *                            BOTTOM, CENTER, or BASELINE
+ * @chainable
+ * @example
+ * <div>
+ * <code>
+ * textSize(16);
+ * textAlign(RIGHT);
+ * text('ABCD', 50, 30);
+ * textAlign(CENTER);
+ * text('EFGH', 50, 50);
+ * textAlign(LEFT);
+ * text('IJKL', 50, 70);
+ * </code>
+ * </div>
+ *
+ * <div>
+ * <code>
+ * textSize(16);
+ * strokeWeight(0.5);
+ *
+ * line(0, 12, width, 12);
+ * textAlign(CENTER, TOP);
+ * text('TOP', 0, 12, width);
+ *
+ * line(0, 37, width, 37);
+ * textAlign(CENTER, CENTER);
+ * text('CENTER', 0, 37, width);
+ *
+ * line(0, 62, width, 62);
+ * textAlign(CENTER, BASELINE);
+ * text('BASELINE', 0, 62, width);
+ *
+ * line(0, 87, width, 87);
+ * textAlign(CENTER, BOTTOM);
+ * text('BOTTOM', 0, 87, width);
+ * </code>
+ * </div>
+ *
+ * @alt
+ *Letters ABCD displayed at top right, EFGH at center and IJKL at bottom left.
+ * The names of the four vertical alignments rendered each showing that alignment's placement relative to a horizontal line.
+ *
+ */
+/**
+ * @method textAlign
+ * @return {Object}
+ */
+p5.prototype.textAlign = function(horizAlign, vertAlign) {
+  p5._validateParameters('textAlign', arguments);
+  return this._renderer.textAlign.apply(this._renderer, arguments);
+};
 
-  /**
-   * Sets the current alignment for drawing text. The parameters LEFT, CENTER,
-   * and RIGHT set the display characteristics of the letters in relation to
-   * the values for the x and y parameters of the text() function. 
-   * 
-   * @method textAlign
-   * @param {Number/Constant} h horizontal alignment, either LEFT,
-   *                            CENTER, or RIGHT
-   * @param {Number/Constant} v vertical alignment, either TOP,
-   *                            BOTTOM, CENTER, or BASELINE
-   * @example
-   * <div>
-   * <code>
-   * textSize(16);
-   * textAlign(RIGHT);
-   * text("ABCD", 50, 30);
-   * textAlign(CENTER);
-   * text("EFGH", 50, 50);
-   * textAlign(LEFT);
-   * text("IJKL", 50, 70);
-   * </code>
-   * </div>
-   */
-  p5.prototype.textAlign = function(h, v) {
-    if (h === constants.LEFT ||
-      h === constants.RIGHT ||
-      h === constants.CENTER) {
-      this.drawingContext.textAlign = h;
-    }
-    if (v === constants.TOP ||
-      v === constants.BOTTOM ||
-      v === constants.CENTER ||
-      v === constants.BASELINE) {
-      this.drawingContext.textBaseline = v;
-    }
-  };
+/**
+ * Sets/gets the spacing, in pixels, between lines of text. This
+ * setting will be used in all subsequent calls to the <a href="#/p5/text">text()</a> function.
+ *
+ * @method textLeading
+ * @param {Number} leading the size in pixels for spacing between lines
+ * @chainable
+ *
+ * @example
+ * <div>
+ * <code>
+ * // Text to display. The "\n" is a "new line" character
+ * let lines = 'L1\nL2\nL3';
+ * textSize(12);
+ *
+ * textLeading(10); // Set leading to 10
+ * text(lines, 10, 25);
+ *
+ * textLeading(20); // Set leading to 20
+ * text(lines, 40, 25);
+ *
+ * textLeading(30); // Set leading to 30
+ * text(lines, 70, 25);
+ * </code>
+ * </div>
+ *
+ * @alt
+ *set L1 L2 & L3 displayed vertically 3 times. spacing increases for each set
+ */
+/**
+ * @method textLeading
+ * @return {Number}
+ */
+p5.prototype.textLeading = function(theLeading) {
+  p5._validateParameters('textLeading', arguments);
+  return this._renderer.textLeading.apply(this._renderer, arguments);
+};
 
-  /**
-   * Sets the spacing between lines of text in units of pixels. This
-   * setting will be used in all subsequent calls to the text() function.
-   *
-   * @method textLeading
-   * @param {Number} l the size in pixels for spacing between lines
-   * @example
-   * <div>
-   * <code>
-   * // Text to display. The "\n" is a "new line" character
-   * lines = "L1\nL2\nL3";
-   * textSize(12);
-   * fill(0);  // Set fill to black
-   * 
-   * textLeading(10);  // Set leading to 10
-   * text(lines, 10, 25);
-   * 
-   * textLeading(20);  // Set leading to 20
-   * text(lines, 40, 25);
-   * 
-   * textLeading(30);  // Set leading to 30
-   * text(lines, 70, 25);
-   * </code>
-   * </div>
-   */
-  p5.prototype.textLeading = function(l) {
-    this._setProperty('_textLeading', l);
-  };
+/**
+ * Sets/gets the current font size. This size will be used in all subsequent
+ * calls to the <a href="#/p5/text">text()</a> function. Font size is measured in pixels.
+ *
+ * @method textSize
+ * @param {Number} theSize the size of the letters in units of pixels
+ * @chainable
+ *
+ * @example
+ * <div>
+ * <code>
+ * textSize(12);
+ * text('Font Size 12', 10, 30);
+ * textSize(14);
+ * text('Font Size 14', 10, 60);
+ * textSize(16);
+ * text('Font Size 16', 10, 90);
+ * </code>
+ * </div>
+ *
+ * @alt
+ *Font Size 12 displayed small, Font Size 14 medium & Font Size 16 large
+ */
+/**
+ * @method textSize
+ * @return {Number}
+ */
+p5.prototype.textSize = function(theSize) {
+  p5._validateParameters('textSize', arguments);
+  return this._renderer.textSize.apply(this._renderer, arguments);
+};
 
-  /**
-   * Sets the current font size. This size will be used in all subsequent
-   * calls to the text() function. Font size is measured in units of pixels.
-   *
-   * @method textSize
-   * @param {Number} s the size of the letters in units of pixels
-   * @example
-   * <div>
-   * <code>
-   * background(0);
-   * fill(255);
-   * textSize(26); 
-   * text("WORD", 10, 50); 
-   * textSize(14);
-   * text("WORD", 10, 70);
-   * </code>
-   * </div>
-   */
-  p5.prototype.textSize = function(s) {
-    this._setProperty('_textSize', s);
-    this._setProperty('_textLeading', s*1.25);
-    this._applyTextProperties();
-  };
+/**
+ * Sets/gets the style of the text for system fonts to NORMAL, ITALIC, BOLD or BOLDITALIC.
+ * Note: this may be is overridden by CSS styling. For non-system fonts
+ * (opentype, truetype, etc.) please load styled fonts instead.
+ *
+ * @method textStyle
+ * @param {Constant} theStyle styling for text, either NORMAL,
+ *                            ITALIC, BOLD or BOLDITALIC
+ * @chainable
+ * @example
+ * <div>
+ * <code>
+ * strokeWeight(0);
+ * textSize(12);
+ * textStyle(NORMAL);
+ * text('Font Style Normal', 10, 15);
+ * textStyle(ITALIC);
+ * text('Font Style Italic', 10, 40);
+ * textStyle(BOLD);
+ * text('Font Style Bold', 10, 65);
+ * textStyle(BOLDITALIC);
+ * text('Font Style Bold Italic', 10, 90);
+ * </code>
+ * </div>
+ *
+ * @alt
+ *words Font Style Normal displayed normally, Italic in italic, bold in bold and bold italic in bold italics.
+ */
+/**
+ * @method textStyle
+ * @return {String}
+ */
+p5.prototype.textStyle = function(theStyle) {
+  p5._validateParameters('textStyle', arguments);
+  return this._renderer.textStyle.apply(this._renderer, arguments);
+};
 
-  /**
-   * Sets the style of the text to NORMAL, ITALIC, or BOLD. Note this is
-   * overridden by CSS styling.
-   *
-   * @method textStyle
-   * @param {Number/Constant} s styling for text, either NORMAL,
-   *                            ITALIC, or BOLD
-   * @example
-   * <div>
-   * <code>
-   * background(0);
-   * fill(255);
-   * textStyle(NORMAL);
-   * textSize(14);
-   * text("WORD", 10, 23);
-   * textStyle(ITALIC);
-   * textSize(14);
-   * text("WORD", 10, 45);
-   * textStyle(BOLD);
-   * textSize(14);
-   * text("WORD", 10, 67);
-   * </code>
-   * </div>
-   */
-  p5.prototype.textStyle = function(s) {
-    if (s === constants.NORMAL ||
-      s === constants.ITALIC ||
-      s === constants.BOLD) {
-      this._setProperty('_textStyle', s);
-      this._applyTextProperties();
-    }
-  };
+/**
+ * Calculates and returns the width of any character or text string.
+ *
+ * @method textWidth
+ * @param {String} theText the String of characters to measure
+ * @return {Number}
+ * @example
+ * <div>
+ * <code>
+ * textSize(28);
+ *
+ * let aChar = 'P';
+ * let cWidth = textWidth(aChar);
+ * text(aChar, 0, 40);
+ * line(cWidth, 0, cWidth, 50);
+ *
+ * let aString = 'p5.js';
+ * let sWidth = textWidth(aString);
+ * text(aString, 0, 85);
+ * line(sWidth, 50, sWidth, 100);
+ * </code>
+ * </div>
+ *
+ * @alt
+ *Letter P and p5.js are displayed with vertical lines at end. P is wide
+ *
+ */
+p5.prototype.textWidth = function(theText) {
+  p5._validateParameters('textWidth', arguments);
+  if (theText.length === 0) {
+    return 0;
+  }
+  return this._renderer.textWidth.apply(this._renderer, arguments);
+};
 
-  /**
-   * Calculates and returns the width of any character or text string.
-   *
-   * @method textWidth
-   * @param {String} s the String of characters to measure
-   * @example
-   * <div>
-   * <code>
-   * background(0);
-   * fill(255);
-   * textSize(14);
-   * s = "String.";
-   * text(s, 10, 23);
-   * console.log(textWidth(s));
-   * </code>
-   * </div>
-   */
-  p5.prototype.textWidth = function(s) {
-    return this.drawingContext.measureText(s).width;
-  };
+/**
+ * Returns the ascent of the current font at its current size. The ascent
+ * represents the distance, in pixels, of the tallest character above
+ * the baseline.
+ * @method textAscent
+ * @return {Number}
+ * @example
+ * <div>
+ * <code>
+ * let base = height * 0.75;
+ * let scalar = 0.8; // Different for each font
+ *
+ * textSize(32); // Set initial text size
+ * let asc = textAscent() * scalar; // Calc ascent
+ * line(0, base - asc, width, base - asc);
+ * text('dp', 0, base); // Draw text on baseline
+ *
+ * textSize(64); // Increase text size
+ * asc = textAscent() * scalar; // Recalc ascent
+ * line(40, base - asc, width, base - asc);
+ * text('dp', 40, base); // Draw text on baseline
+ * </code>
+ * </div>
+ */
+p5.prototype.textAscent = function() {
+  p5._validateParameters('textAscent', arguments);
+  return this._renderer.textAscent();
+};
 
-  /**
-   * Returns ascent of the current font at its current size.
-   * @example
-   * <div>
-   * <code>
-   * var base = height * 0.75;
-   * var scalar = 0.8; // Different for each font
-   * 
-   * textSize(32);  // Set initial text size
-   * var a = textAscent() * scalar;  // Calc ascent
-   * line(0, base-a, width, base-a);
-   * text("dp", 0, base);  // Draw text on baseline
-   * 
-   * textSize(64);  // Increase text size
-   * a = textAscent() * scalar;  // Recalc ascent
-   * line(40, base-a, width, base-a);
-   * text("dp", 40, base);  // Draw text on baseline
-   * </code>
-   * </div>
-   */
-  p5.prototype.textAscent = function() {
-    if (this._textAscent == null) { this._updateTextMetrics(); }
-    return this._textAscent;
-  };
+/**
+ * Returns the descent of the current font at its current size. The descent
+ * represents the distance, in pixels, of the character with the longest
+ * descender below the baseline.
+ * @method textDescent
+ * @return {Number}
+ * @example
+ * <div>
+ * <code>
+ * let base = height * 0.75;
+ * let scalar = 0.8; // Different for each font
+ *
+ * textSize(32); // Set initial text size
+ * let desc = textDescent() * scalar; // Calc ascent
+ * line(0, base + desc, width, base + desc);
+ * text('dp', 0, base); // Draw text on baseline
+ *
+ * textSize(64); // Increase text size
+ * desc = textDescent() * scalar; // Recalc ascent
+ * line(40, base + desc, width, base + desc);
+ * text('dp', 40, base); // Draw text on baseline
+ * </code>
+ * </div>
+ */
+p5.prototype.textDescent = function() {
+  p5._validateParameters('textDescent', arguments);
+  return this._renderer.textDescent();
+};
 
-  /**
-   * Returns descent of the current font at its current size.
-   * @example
-   * <div>
-   * <code>
-   * var base = height * 0.75;
-   * var scalar = 0.8; // Different for each font
-   * 
-   * textSize(32);  // Set initial text size
-   * var a = textDescent() * scalar;  // Calc ascent
-   * line(0, base+a, width, base+a);
-   * text("dp", 0, base);  // Draw text on baseline
-   * 
-   * textSize(64);  // Increase text size
-   * a = textDescent() * scalar;  // Recalc ascent
-   * line(40, base+a, width, base+a);
-   * text("dp", 40, base);  // Draw text on baseline
-   * </code>
-   * </div> 
-   */
-  p5.prototype.textDescent = function() {
-    if (this._textDescent == null) { this._updateTextMetrics(); }
-    return this._textDescent;
-  };
+/**
+ * Helper function to measure ascent and descent.
+ */
+p5.prototype._updateTextMetrics = function() {
+  return this._renderer._updateTextMetrics();
+};
 
-  /**
-   * Helper fxn to apply text properties. 
-   */
-  p5.prototype._applyTextProperties = function () {
-    this._setProperty('_textAscent', null);
-    this._setProperty('_textDescent', null);
-
-    var str = this._textStyle + ' ' + this._textSize + 'px ' + this._textFont;
-    this.drawingContext.font = str;
-  };
-
-  /**
-   * Helper fxn to measure ascent and descent. 
-   * Adapted from http://stackoverflow.com/a/25355178
-   */
-  p5.prototype._updateTextMetrics = function () {
-
-    var text = document.createElement('span');
-    text.style.fontFamily = this._textFont;
-    text.style.fontSize = this._textSize + 'px';
-    text.innerHTML = 'ABCjgq|';
-
-    var block = document.createElement('div');
-    block.style.display = 'inline-block';
-    block.style.width = '1px';
-    block.style.height = '0px';
-
-    var container = document.createElement('div');
-    container.appendChild(text);
-    container.appendChild(block);
-
-    container.style.height = '0px';
-    container.style.overflow = 'hidden';
-    document.body.appendChild(container);
-
-    block.style.verticalAlign = 'baseline';
-    var blockOffset = this._calculateOffset(block);
-    var textOffset = this._calculateOffset(text);
-    var ascent = blockOffset[1] - textOffset[1];
-
-    block.style.verticalAlign = 'bottom';
-    blockOffset = this._calculateOffset(block);
-    textOffset = this._calculateOffset(text);
-    var height = blockOffset[1] - textOffset[1];
-    var descent = height - ascent;
-
-    document.body.removeChild(container);
-
-    this._setProperty('_textAscent', ascent);
-    this._setProperty('_textDescent', descent);
-  };
-
-  /**
-   * Helper fxn to measure ascent and descent. 
-   * Adapted from http://stackoverflow.com/a/25355178
-   */
-  p5.prototype._calculateOffset = function (object) {
-    var currentLeft = 0, currentTop = 0;
-    if( object.offsetParent ) {
-      do {
-        currentLeft += object.offsetLeft;
-        currentTop += object.offsetTop;
-      } while( object = object.offsetParent );
-    } else {
-      currentLeft += object.offsetLeft;
-      currentTop += object.offsetTop;
-    }
-    return [currentLeft,currentTop];
-  };
-
-  return p5;
-
-});
+module.exports = p5;
